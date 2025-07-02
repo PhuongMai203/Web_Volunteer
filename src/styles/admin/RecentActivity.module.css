@@ -1,0 +1,80 @@
+.wrapper {
+  margin-top: 2rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  border: 1px solid rgb(254 243 199); /* amber-100 */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: rgb(120 53 15); /* amber-900 */
+}
+
+.viewAllBtn {
+  font-size: 0.875rem;
+  color: rgb(202 138 4); /* amber-600 */
+  font-weight: 500;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.viewAllBtn:hover {
+  color: rgb(146 64 14); /* amber-800 */
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.activityItem {
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgb(254 243 199); /* amber-100 */
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.iconWrapper {
+  background: rgb(254 243 199); /* amber-100 */
+  color: rgb(202 138 4); /* amber-600 */
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action {
+  font-weight: 500;
+  color: rgb(120 53 15); /* amber-900 */
+}
+
+.detail {
+  font-size: 0.875rem;
+  color: rgb(202 138 4); /* amber-600 */
+  margin-top: 0.25rem;
+}
+
+.user {
+  color: rgb(146 64 14); /* amber-800 */
+  font-weight: 500;
+}

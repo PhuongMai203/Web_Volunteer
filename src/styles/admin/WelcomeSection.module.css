@@ -1,0 +1,140 @@
+.wrapper {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgb(254 243 199); /* border-amber-100 */
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .topSection {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(120 53 15); /* text-amber-900 */
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 1.875rem;
+  }
+}
+
+.highlight {
+  color: rgb(217 119 6); /* text-amber-600 */
+}
+
+.description {
+  color: rgb(180 83 9); /* text-amber-700 */
+}
+
+.buttonWrapper {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .buttonWrapper {
+    margin-top: 0;
+  }
+}
+
+.manageButton {
+  background: linear-gradient(to right, rgb(251 191 36), rgb(217 119 6));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.manageButton:hover {
+  background: linear-gradient(to right, rgb(217 119 6), rgb(180 83 9));
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .infoGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.infoCard {
+  background: white;
+  border: 1px solid rgb(253 230 138); /* border-amber-200 */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.infoCard:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.cardLabel {
+  font-size: 0.875rem;
+  color: rgb(217 119 6); /* text-amber-600 */
+  margin-bottom: 0.25rem;
+}
+
+.cardValue {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: rgb(120 53 15); /* text-amber-900 */
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.approved {
+  background: rgb(220 252 231); /* bg-green-100 */
+  color: rgb(22 101 52); /* text-green-800 */
+}
+
+.pending {
+  background: rgb(254 249 195); /* bg-yellow-100 */
+  color: rgb(133 77 14); /* text-yellow-800 */
+}
+
+.roleBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: rgb(254 243 199); /* bg-amber-100 */
+  color: rgb(120 53 15); /* text-amber-800 */
+  font-size: 0.875rem;
+  font-weight: 500;
+}

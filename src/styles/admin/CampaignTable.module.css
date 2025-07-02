@@ -1,0 +1,142 @@
+.tableContainer {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.table {
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+.thead {
+  background: #ffffff; /* bg-orange-50 */
+}
+
+.th {
+  padding: 0.75rem 1.5rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c2410c; /* text-orange-800 */
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tbody {
+  background: white;
+}
+
+.trHover:hover {
+  background: #fff7ed; /* hover:bg-orange-50 */
+  transition: background-color 0.15s;
+}
+
+.td {
+  padding: 1rem 1.5rem;
+}
+
+.name {
+  font-weight: 500;
+  color: #1f2937; /* text-gray-900 */
+}
+
+.title {
+  font-size: 0.875rem;
+  color: #6b7280; /* text-gray-500 */
+  margin-top: 0.25rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; 
+}
+
+.volunteer {
+  display: flex;
+  align-items: center;
+}
+
+.volunteerIcon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: #f97316; /* text-orange-500 */
+  margin-right: 0.5rem;
+}
+
+.actionCell {
+  text-align: right;
+}
+
+.editBtn {
+  color: #2563eb; /* text-blue-600 */
+  margin-right: 0.75rem;
+  transition: color 0.15s;
+}
+
+.editBtn:hover {
+  color: #1d4ed8; /* hover:text-blue-900 */
+}
+
+.deleteBtn {
+  color: #dc2626; /* text-red-600 */
+  transition: color 0.15s;
+}
+
+.deleteBtn:hover {
+  color: #7f1d1d; /* hover:text-red-900 */
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem 0;
+  color: #9ca3af; /* text-gray-400 */
+}
+.tableFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tableInfo {
+  font-size: 14px;
+  color: #b7791f;
+}
+
+.pagination {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pageButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #fbd38d;
+  color: #b7791f;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pageButton:hover:not(:disabled) {
+  background: #fff7ec;
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.activePage {
+  background: #ed8936;
+  color: white;
+  border-color: #ed8936;
+}

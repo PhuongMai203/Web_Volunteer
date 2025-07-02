@@ -1,0 +1,37 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgb(255 251 235); /* amber-50 */
+}
+
+.contentWrapper {
+  display: flex;
+  flex: 1;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .mainContent {
+    padding: 1.5rem;
+  }
+}
+
+.pageHeader {
+  margin-bottom: 1.5rem;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(120 53 15); /* amber-900 */
+}
+
+.pageSubTitle {
+  margin-top: 0.25rem;
+  color: rgb(202 138 4); /* amber-700 */
+}

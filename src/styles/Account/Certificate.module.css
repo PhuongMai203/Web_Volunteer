@@ -1,0 +1,217 @@
+/* Certificate.module.css */
+.certificateContainer {
+  position: relative;
+  width: 800px;
+  min-height: 600px;
+  margin: 0 auto;
+  padding: 40px 60px;
+  background-color: #fff8e1;
+  border: 3px solid #e65100;
+  border-radius: 18px;
+  box-shadow: 4px 6px 12px rgba(255, 152, 0, 0.3);
+  text-align: center;
+  overflow: hidden;
+  font-family: 'Merriweather', serif;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffd54f' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 120px;
+  color: rgba(255, 213, 79, 0.1);
+  z-index: 0;
+  font-weight: bold;
+}
+
+.nationalTitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #c62828;
+  text-transform: uppercase;
+}
+
+.nationalSubtitle {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #c62828;
+}
+
+.separator {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ff9800, transparent);
+  margin: 15px 0;
+}
+
+.organization {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 25px 0;
+  color: #e65100;
+}
+
+.awardText {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-style: italic;
+  color: #5d4037;
+}
+
+.certificateTitle {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  color: #e65100;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+}
+
+.certificateTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: linear-gradient(to right, #ff9800, #ff5722, #ff9800);
+}
+
+.volunteerName {
+  font-size: 2.8rem;
+  margin: 30px 0;
+  color: #bf360c;
+  letter-spacing: 2px;
+}
+
+.achievementText {
+  font-size: 1.2rem;
+  margin: 40px 30px;
+  line-height: 1.8;
+  color: #4e342e;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #e65100;
+  font-size: 1.3rem;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 0 20px;
+  position: relative;
+}
+
+.leftInfo {
+  text-align: left;
+  font-size: 1.1rem;
+  color: #5d4037;
+  line-height: 1.8;
+}
+
+.rightInfo {
+  text-align: center;
+  position: relative;
+  padding-right: 20px;
+}
+
+.representativeTitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #5d4037;
+}
+
+.representativeRole {
+  font-style: italic;
+  color: #5d4037;
+  margin-bottom: 5px;
+}
+
+.signatureContainer {
+  position: relative;
+  height: 120px;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Chữ ký với font nghệ thuật */
+.signature {
+  font-family: 'Segoe Script', cursive;
+  font-size: 2rem;
+  color: #000;
+  position: relative;
+  z-index: 2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, #333, #000);
+  -webkit-background-clip: text;
+  background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  padding: 0 5px;
+  letter-spacing: 1px;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
+}
+
+
+/* Con dấu nằm phía sau chữ ký */
+.seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(10deg);
+  width: 110px;
+  height: 110px;
+  border: 3px solid #d32f2f;
+  border-radius: 50%;
+background-color: transparent;
+
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
+}
+
+.seal::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  border: 2px solid #d32f2f;
+  border-radius: 50%;
+}
+
+.seal::after {
+  content: "✪";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 100px;
+  color: #d32f2f;
+  opacity: 0.4;
+}
+
+.signatureHint {
+  font-size: 0.9rem;
+  color: #5d4037;
+  font-style: italic;
+  margin-top: 0px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Thêm font nghệ thuật cho chữ ký */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');

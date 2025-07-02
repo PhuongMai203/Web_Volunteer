@@ -1,0 +1,121 @@
+.sidebar {
+  width: 16rem; /* tương đương w-64 */
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06); /* tương đương shadow-md */
+  padding: 1rem; /* tương đương p-4 */
+  z-index: 20;
+  height: 100%;
+  transition: transform 0.3s;
+  border-right: 1px solid #fde68a; /* tương đương border-amber-100 */
+  position: fixed;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0);
+    position: static;
+  }
+}
+
+.sidebarHidden {
+  transform: translateX(-100%);
+}
+
+.sidebarVisible {
+  transform: translateX(0);
+}
+.menuWrapper {
+  margin-top: 0.5rem;   /* mt-2 */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.menuTitle {
+  font-size: 1.125rem;   /* text-lg */
+  font-weight: 600;      /* font-semibold */
+  color: #78350f;        /* text-amber-800 -> mã màu chính xác của amber-800 */
+}
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* space-y-1 tương đương khoảng cách giữa các item */
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;   /* space-x-2 */
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  color: #4b5563; /* text-gray-600 */
+  text-decoration: none;
+}
+
+.navItem:hover {
+  background-color: #fffbeb; /* hover:bg-amber-50 */
+  color: #92400e; /* hover:text-amber-700 */
+}
+
+.navItemActive {
+  background-color: #fffbeb; /* bg-amber-50 */
+  color: #92400e; /* text-amber-700 */
+  border-left: 4px solid #d97706; /* border-amber-600 */
+  font-weight: 600;
+}
+
+.navIcon {
+  font-size: 1.125rem; /* text-lg */
+  color: #6b7280; /* text-gray-500 */
+}
+
+.navIconActive {
+  color: #d97706; /* text-amber-600 */
+}
+
+/* System Status Block */
+.systemStatus {
+  margin-top: 2rem; /* mt-8 */
+  padding: 0.75rem;
+  background-color: #fffbeb; /* bg-amber-50 */
+  border-radius: 0.5rem;
+  border: 1px solid #fde68a; /* border-amber-100 */
+}
+
+.systemStatusTitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #78350f; /* text-amber-800 */
+  margin-bottom: 0.5rem;
+}
+
+.systemStatusContent {
+  display: flex;
+  align-items: center;
+}
+
+.statusDot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background-color: #22c55e; /* bg-green-500 */
+  margin-right: 0.5rem;
+}
+
+.statusText {
+  font-size: 0.875rem;
+  color: #92400e; /* text-amber-700 */
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .overlay {
+    display: none;
+  }
+}

@@ -1,0 +1,67 @@
+/* Phần container chung cho biểu đồ */
+.chartContainer {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Tiêu đề biểu đồ */
+.chartContainer h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Dropdown chọn năm */
+.filterSelect {
+  padding: 0.4rem 0.8rem;
+  border: 1.5px solid #ff7f50; /* Cam pastel */
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  outline: none;
+  min-width: 120px;
+  max-width: 160px;
+}
+
+.filterSelect:focus {
+  border-color: #e76f3c;
+}
+
+/* Responsive fix cho container biểu đồ */
+.recharts-responsive-container {
+  width: 100% !important;
+  height: 400px !important;
+}
+.chartWrapper {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #333;
+  text-align: center;
+}
+
+.filterSelect {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.filterSelect:focus {
+  border-color: #007bff;
+}

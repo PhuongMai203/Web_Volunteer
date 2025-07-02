@@ -1,0 +1,67 @@
+.participantList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.participantItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.participantName {
+  font-size: 16px;
+  color: #333;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  margin-left: 15px;
+}
+
+.participantName {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.messageButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.messageButton:hover {
+  color: #0056b3;
+}
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.exportButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.exportButton:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,189 @@
+.supportSection {
+  margin-top: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+}
+
+.sectionHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ea580c; /* text-orange-600 */
+  margin-bottom: 2.5rem;
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+  max-width: 72rem; /* max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .sectionContent {
+    flex-direction: row;
+  }
+}
+
+.leftCol {
+  width: 100%;
+  color: #1f2937; /* text-gray-800 */
+}
+
+@media (min-width: 1024px) {
+  .leftCol {
+    width: 50%;
+  }
+}
+
+.leftHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.leftHeading span {
+  font-size: 1.875rem;
+  color: #f97316;
+}
+
+.leftHeading h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.questionList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.questionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #fff7ed;
+  padding: 1rem;
+  border-left: 4px solid #fb923c;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.questionItem span {
+  color: #fb923c;
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+}
+
+.questionItem p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.note {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+.rightCol {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .rightCol {
+    width: 50%;
+  }
+}
+
+.supportBox {
+  background-color: #ffffff;
+  border: 1px solid #fed7aa;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.supportBox h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ea580c;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.inputField,
+.textAreaField {
+  width: 100%;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.inputField:focus,
+.textAreaField:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #fdba74;
+}
+
+.textAreaField {
+  resize: vertical;
+}
+
+.icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #64748b;
+}
+
+.iconTop {
+  top: 0.75rem;
+  transform: none;
+}
+
+.submitRow {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .submitRow {
+    justify-content: flex-start;
+  }
+}
+
+.submitButton {
+  background-color: #22c55e;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.submitButton:hover {
+  background-color: #16a34a;
+}

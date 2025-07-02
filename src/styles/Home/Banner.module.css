@@ -1,0 +1,232 @@
+/* Banner.module.css */
+.backgroundShapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+.bannerContainer {
+  width: 100%;
+  background: linear-gradient(to right, #fff7ed, #fffbeb); 
+  padding-top: 2rem; 
+  padding-bottom: 3rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); 
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 4rem; 
+}
+
+.shapeBlue {
+  position: absolute;
+  top: -5rem;
+  left: -5rem;
+  width: 15rem;
+  height: 15rem;
+  background-color: rgba(3, 116, 253, 0.523);
+  border-radius: 9999px;
+}
+
+.shapeRed {
+  position: absolute;
+  bottom: -5rem;
+  right: -5rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: rgba(220, 38, 38, 0.442); /* red-600 with opacity */
+  border-radius: 9999px;
+}
+
+.imageHover {
+  transition: transform 0.3s ease;
+}
+
+.imageHover:hover {
+  transform: scale(1.05);
+}
+.innerContainer {
+  max-width: 72rem;   
+  margin-left: auto; 
+  margin-right: auto;
+  position: relative; 
+  z-index: 10;   
+}
+.flexLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .flexLayout {
+    flex-direction: row;
+  }
+}
+.textBlock {
+  flex: 1;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .textBlock {
+    text-align: left;
+    padding-bottom: 0;
+  }
+}
+.heading {
+  font-size: 2.25rem;  
+  font-weight: 700;         
+  color: #ea580c;           
+  line-height: 1.375;       
+  margin-bottom: 1rem;  
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 3rem;        
+  }
+}
+.paragraph {
+  color: #374151;         
+  font-size: 1.125rem;  
+  margin-bottom: 1.5rem;      
+  max-width: 36rem;          
+  margin-left: auto;   
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .paragraph {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .buttonWrapper {
+    justify-content: flex-start;
+  }
+}
+.ctaButton {
+  background: linear-gradient(to right, #fb923c, #fcd34d); 
+  color: white;                       
+  font-weight: 600;                  
+  padding: 0.75rem 2rem;            
+  border-radius: 0.75rem;            
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: scale(1);
+  outline: none;
+}
+
+.ctaButton:hover {
+  background: linear-gradient(to right, #f97316, #fbbf24);
+  transform: scale(1.05);
+}
+
+.ctaButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(253, 186, 116, 0.5); /* focus:ring-2 focus:ring-orange-300 + opacity */
+}
+.waveWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .waveWrapper {
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.waveLine {
+  width: 16rem;
+  height: 0.5rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .waveLine {
+    width: 0.5rem;
+    height: 16rem;
+  }
+}
+
+.fullSizeAbsolute {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.fullSize {
+  width: 100%;
+  height: 100%;
+}
+.imageBlock {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.imageCard {
+  position: relative;
+  width: 100%;
+  max-width: 28rem; 
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid #ffedd5; 
+}
+
+.mainImageWrapper {
+  aspect-ratio: 16 / 9;
+  background-color: #fff7ed; 
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.thumbnailGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.thumbnail,
+.thumbnailAlt,
+.thumbnailAlt2 {
+  height: 5rem; 
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.thumbnail {
+  background-color: #ffedd5;
+}
+
+.thumbnailAlt {
+  background-color: #fef3c7;
+}
+
+.thumbnailAlt2 {
+  background-color: #fed7aa;
+}

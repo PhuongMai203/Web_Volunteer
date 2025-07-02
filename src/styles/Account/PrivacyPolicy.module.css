@@ -1,0 +1,119 @@
+.container {
+  background-color: #fef9f3; /* Màu nền cam nhạt */
+  min-height: 100vh;
+}
+
+.header {
+  background: linear-gradient(135deg, #ffa500, #ff7b00);
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.policyColumn {
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  border-top: 5px solid #e67e22;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policyColumn:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #d35400; /* Màu cam đậm cho tiêu đề */
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f9e0c8; /* Màu cam nhạt cho đường gạch dưới */
+}
+
+.policyColumn p {
+  margin-bottom: 15px;
+  color: #666; /* Màu chữ xám đậm */
+  line-height: 1.7;
+}
+
+.email {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #e67e22; /* Màu cam chính */
+  background-color: #f9e0c8; /* Màu nền cam nhạt */
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.loading {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2rem;
+  color: #e67e22;
+}
+
+.loading::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 4px solid rgba(230, 126, 34, 0.2);
+  border-top: 4px solid #e67e22;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.emptyContent {
+  background-color: #fff9f0;
+  border: 1px dashed #e67e22;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: #d35400;
+  margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+}

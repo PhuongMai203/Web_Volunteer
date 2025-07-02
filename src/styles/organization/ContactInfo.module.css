@@ -1,0 +1,261 @@
+.wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #ffd8a8;
+  border-radius: 16px;
+}
+
+.sidebar {
+  width: 300px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: #f1eddf;
+}
+
+.title {
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ffc078;
+  margin-bottom: 1rem;
+}
+
+.loading {
+  padding: 1rem;
+  text-align: center;
+}
+
+.userList {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  overflow-x: auto; 
+  padding-bottom: 10px;
+}
+
+.userCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem; 
+  border-radius: 8px;
+  transition: background 0.2s;
+  min-width: 70px; 
+}
+
+.userCard:hover {
+  background-color: #e9ecef;
+}
+
+.selected {
+  background-color: #e0e0e0 !important;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 0; 
+  margin-bottom: 0.3rem; 
+}
+
+.name {
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-align: center;
+  max-width: 65px;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+.chatBox {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+
+/* Thêm style cho phần chưa chọn người dùng */
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.mainContent > p {
+  text-align: center;
+  margin-top: 2rem;
+  color: #6c757d;
+}
+.chatBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 600px;
+  height: 90vh;
+  background-color: #fff4e6;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.chatHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid #ffc078;
+  margin-bottom: 1rem;
+}
+
+.chatHeader .avatar {
+  border-radius: 50%;
+}
+.chatName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #272220;
+}
+
+
+.inputArea {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ffd8a8;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+  background-color: #fffdfb;
+}
+
+.sendButton {
+  background-color: #ffa94d;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.sendButton:hover {
+  background-color: #ff922b;
+}
+
+.sendIcon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) saturate(100%) invert(98%) sepia(9%) saturate(2289%) hue-rotate(323deg) brightness(103%) contrast(92%);
+}
+
+.messageArea {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  height: 400px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+  flex: 1;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.myMessage {
+  align-self: flex-end;
+  background-color: #f1c4a3;
+  padding: 8px 12px;
+  border-radius: 16px 16px 4px 16px;
+  max-width: 60%;
+  word-break: break-word;
+}
+
+.theirMessage {
+  align-self: flex-start;
+  background-color: #f3f8cb;
+  padding: 8px 12px;
+  border-radius: 16px 16px 16px 4px;
+  max-width: 60%;
+  word-break: break-word;
+}
+.recentSection {
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.recentTitle {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Container mỗi item chat */
+.recentChatItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.recentChatItem:hover {
+  background-color: #f0f2f5;
+}
+
+.selected {
+  background-color: #d6e4ff; /* màu nền khi được chọn */
+}
+
+/* Avatar */
+.recentAvatar {
+  border-radius: 70%;
+  object-fit: cover;
+  margin-right: 10px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.3rem; 
+}
+
+/* Phần tên + tin nhắn */
+.recentChatText {
+  flex: 1;
+  overflow: hidden;
+}
+
+.recentName {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #111;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recentLastMessage {
+  margin: 2px 0 0 0;
+  font-size: 13px;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

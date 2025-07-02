@@ -1,0 +1,39 @@
+.popup {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 350px;
+  max-height: 70vh;
+  background: #fffbe7;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  overflow: auto;
+  padding: 16px;
+  z-index: 9999;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: #252a4a;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #252a4a;
+}
+
+.unread {
+  background: #fff3cd;
+}

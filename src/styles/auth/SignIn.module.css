@@ -1,0 +1,333 @@
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  
+}
+
+@media (min-width: 768px) {
+  .mainContent {
+    flex-direction: row;
+  }
+}
+
+.leftSection {
+  flex: 2;
+  background: linear-gradient(to bottom right, #fffbe6, #fff0e6, #ffe6f0);
+  border-top-right-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border: 2px solid #fff7ed;
+  box-shadow: 12px 12px 32px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Rất quan trọng để phần phải không tràn ra */
+  position: relative;
+  padding: 3rem;
+}
+
+
+@media (min-width: 768px) {
+  .leftSection {
+    width: 50%;
+  }
+}
+
+.leftContent {
+  text-align: center;
+  margin-top: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.logoContainer {
+  display: inline-block;
+  animation: rollInCenter 1.6s ease-out forwards;
+}
+
+.logoWrapper {
+  background-color: #fff;
+  border-radius: 9999px; 
+  padding: 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); 
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 700; 
+  color: #472307;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05)); 
+  margin-top: 1.5rem;
+}
+
+.description {
+  font-size: 1rem;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #c2410c;
+  line-height: 1.625;
+  font-weight: 500;
+}
+
+.labelsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); 
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-left: 1.5rem; 
+  padding-right: 1.5rem; 
+}
+
+.labelItem {
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(8px); 
+  backdrop-filter: blur(8px); 
+  border-radius: 0.75rem; 
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #fde68a;
+  opacity: 0; 
+  transform: translateY(20px); 
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.labelTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #b45309;
+  margin-bottom: 0.25rem; 
+}
+
+.labelCheck {
+  font-size: 1.125rem;
+  color: #16a34a;
+  font-weight: 700; 
+}
+
+.rightSection {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: slideInFromLeft 0.8s ease-out forwards;
+  opacity: 0; 
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); 
+    opacity: 1;
+  }
+}
+
+
+
+.loginCard {
+  width: 100%;
+  max-width: 28rem;
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  opacity: 0; 
+  transform: translateY(20px); 
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.loginTitle {
+  font-size: 2.25rem; 
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+  color: #333333;
+  font-family: 'Agbalumo', cursive;
+}
+
+.formSpace {
+  margin-top: 1.5rem; 
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem; 
+  color: #374151; 
+  margin-bottom: 0.25rem; 
+  font-weight: 500; 
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem; 
+  border-radius: 0.75rem; 
+  outline: none;
+  background-color: #fbf5d0;
+  color: #1f2937;
+}
+
+.input:focus {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+  border-color: #f59e0b; 
+  background-color: #f7f7f7;
+}
+
+.formOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #4b5563; 
+}
+
+.rememberMe {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+}
+
+.rememberMe input[type="checkbox"] {
+  accent-color: #f59e0b;
+}
+
+.forgotPassword {
+  color: #c2410c;
+  text-decoration: none;
+}
+
+.forgotPassword:hover {
+  text-decoration: underline;
+}
+
+.submitButton {
+  width: 100%;
+  background: linear-gradient(to right, #fbbf24, #f472b6);
+  color: #fff;
+  padding: 0.75rem; 
+  border-radius: 0.75rem;
+  font-weight: 600; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 150ms;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to right, #f59e0b, #ec4899);
+}
+
+.signupText {
+  text-align: center;
+  font-size: 0.875rem; 
+  color: #4b5563;
+  margin-top: 1rem;
+}
+
+.signupLink {
+  margin-left: 0.25rem;
+  color: #d97706; 
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+
+.orDivider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  margin-top: 1.5rem; 
+  margin-bottom: 1.5rem;
+}
+
+.dividerLine {
+  flex: 1;
+  border-top: 1px solid #d1d5db; 
+}
+
+.orText {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.socialLoginButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem; 
+}
+
+.socialButton {
+  padding: 0.75rem;
+  border-radius: 9999px; 
+  border: 1px solid #d1d5db; 
+  transition-property: box-shadow;
+  transition-duration: 150ms;
+  background-color: #fff;
+}
+
+.socialButton:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rollInCenter {
+  0% {
+    transform: translateX(-300px) rotate(-360deg) scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(30px) rotate(20deg) scale(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(0) rotate(0deg) translateY(-10px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+.signupLink {
+  background: none;
+  border: none;
+  color: #ea580c;
+  cursor: pointer;
+  margin-left: 0.25rem;
+  font-weight: 600;
+}
+.signupLink:hover {
+  text-decoration: underline;
+}
+.passwordCheckList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 0.25rem 1rem; 
+  margin-top: 0.5rem;
+  margin-left: 2.5rem;
+}
+
+.passwordCheckItem {
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+.errorText {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}

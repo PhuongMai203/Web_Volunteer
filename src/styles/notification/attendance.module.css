@@ -1,0 +1,17 @@
+.notificationItem {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #d0f0ff, #e8faff);
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.icon {
+  color: #007a99;
+  margin-right: 10px;
+  flex-shrink: 0;
+  font-size: 18px;
+}

@@ -1,0 +1,495 @@
+.detailContainer {
+  min-width: 900px;
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #fafae5;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.backButton {
+  background-color: transparent;
+  border: none;
+  color: #4e2d02;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+  font-weight: 600;
+}
+
+.backButton:hover {
+  color: #412402;
+}
+
+.detailContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.imageWrapper {
+  flex: 1 1 300px;
+}
+
+.detailImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.infoWrapper {
+  flex: 2 1 400px;
+}
+
+.title {
+  margin-bottom: 6px;
+  color: #54220b;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.infoWrapper p {
+  margin: 8px 0;
+  color: #444;
+  line-height: 1.5;
+}
+
+.infoWrapper strong {
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .detailContent {
+    flex-direction: column;
+  }
+}
+.buttonRow {
+  margin-top: 12px;
+}
+
+.editButton,
+.saveButton,
+.cancelButton ,
+.deleteButton{
+  margin-right: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editButton {
+  background-color: #f59e0b;
+  color: white;
+}
+.deleteButton {
+  background-color: #ff4a4a;
+  color: white;
+}
+
+.saveButton {
+  background-color: #10b981;
+  color: white;
+}
+
+.cancelButton {
+  background-color: #ef4444;
+  color: white;
+}
+.description {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-top: 4px;
+}
+
+.textareaEdit {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.inputEdit {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.tabContainer {
+  display: flex;
+  margin-top: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  /* Thêm các thuộc tính sau để chia đều */
+  justify-content: space-between; /* Các tab cách đều nhau */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+}
+
+.tabButton {
+  flex: 1; /* Mỗi tab chiếm phần bằng nhau */
+  padding: 12px 0; /* Điều chỉnh padding */
+  font-size: 16px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  position: relative;
+  transition: all 0.3s ease;
+  text-align: center; /* Căn giữa nội dung */
+}
+
+/* Các style còn lại giữ nguyên */
+.tabButton:hover {
+  color: #2c3e50;
+}
+
+.activeTab {
+  color: #ffa113;
+  font-weight: 600;
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #ffa654;
+}
+
+.tabContent {
+  padding: 20px 0;
+  min-height: 200px;
+}
+.donateTab {
+  padding: 20px 0;
+  min-height: 200px;
+}
+.reviewTab {
+  padding: 20px 0;
+  min-height: 200px;
+}
+/* Tab specific styles */
+.actionButton {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+}
+
+.actionButton:hover {
+  background-color: #c0392b;
+}
+
+.actionButton:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.donateForm {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.donateInput {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.bankInfo {
+  background-color: #f0f7ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.ratingSection {
+  margin-top: 20px;
+}
+
+.ratingSummary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.averageRating {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.ratingStars {
+  font-size: 24px;
+  color: #f39c12;
+}
+
+.ratingCount {
+  color: #7f8c8d;
+}
+
+.reviewForm {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.ratingInput {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.starsContainer {
+  display: flex;
+}
+
+.star {
+  font-size: 24px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star:hover,
+.star.active {
+  color: #f39c12;
+}
+
+.reviewTextarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  margin: 10px 0;
+}
+
+.submitReviewButton {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submitReviewButton:hover {
+  background-color: #27ae60;
+}
+
+.reviewsList {
+  margin-top: 30px;
+}
+.participantList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.participantItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+  margin-left: 15px;
+}
+
+.participantName {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.messageButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+  font-size: 18px;
+}
+
+.messageButton:hover {
+  color: #0056b3;
+}
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.exportButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.exportButton:hover {
+  background-color: #218838;
+}
+.donationAmount {
+  margin-left: auto;
+  font-weight: bold;
+  color: green;
+}
+.reviewList {
+  margin-top: 24px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.averageRating {
+  font-size: 14px;
+  color: #f39c12;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.feedbackItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  gap: 16px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.feedbackLeft {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.feedbackContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.participantName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.starRow {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 6px;
+}
+
+.starIcon {
+  color: #f39c12;
+  font-size: 16px;
+}
+
+.createdAt {
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+}
+.inlineInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.inputEditSmall {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 120px;
+}
+
+.infoBlock {
+  margin-bottom: 12px;
+}
+.attendanceStatus {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.present {
+  color: #2e7d32; /* xanh lá */
+}
+
+.absent {
+  color: #c62828; /* đỏ đậm */
+}
+.nameAndStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1; /* Phần này giúp đẩy nút nhắn tin sang phải */
+}

@@ -1,0 +1,163 @@
+.feedbackContainer {
+  background-color: #fff7ec;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.averageRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 12px;
+  font-weight: normal;
+  font-size: 16px;
+  color: orange;
+}
+
+.noFeedback {
+  color: gray;
+}
+
+.feedbackItem {
+  border-top: 1px solid #ddd;
+  padding: 12px 0;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.leftInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userName {
+  font-weight: bold;
+}
+
+.dateText {
+  font-size: 0.85rem;
+  color: gray;
+}
+
+.rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.comment {
+  font-size: 15px;
+}
+.feedbackForm {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ratingSelect {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+
+.submitBtn {
+  background-color: orange;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: darkorange;
+}
+.formTitle {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.starRatingWrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.starIcon {
+  margin-right: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.starIcon:hover {
+  transform: scale(1.2);
+}
+
+.activeStar svg {
+  filter: drop-shadow(0 0 2px orange);
+}
+
+.commentInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  resize: vertical;
+}
+
+.submitButton {
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: darkorange;
+}
+
+.errorText {
+  color: red;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.hasSubmittedMessage,
+.loginToFeedbackMessage {
+  margin-top: 15px;
+  color: #555;
+  font-style: italic;
+}

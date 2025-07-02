@@ -1,0 +1,573 @@
+/* CampaignDetail.module.css */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero section styles */
+.heroSection {
+  position: relative;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.heroImageContainer {
+  position: relative;
+  height: 400px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+}
+
+.heroContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  color: white;
+}
+
+.categoryTag {
+  display: inline-block;
+  background-color: #4CAF50;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 0 0 15px 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.urgencyTag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 14px;
+  background-color: #f0f0f0;
+}
+
+.highUrgency {
+  background-color: #f44336;
+  color: white;
+}
+
+.mediumUrgency {
+  background-color: #ff9800;
+  color: white;
+}
+
+.lowUrgency {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.urgencyIcon {
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.metaInfo {
+  display: flex;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+
+.metaIcon {
+  font-size: 18px;
+}
+
+/* Main content layout */
+.contentWrapper {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+.sidebar {
+  width: 350px;
+}
+
+/* Section styling */
+.section {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c3e50;
+}
+
+.sectionIcon {
+  font-size: 1.8rem;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Details grid */
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.detailItem {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.detailItem:hover {
+  transform: translateY(-5px);
+  background-color: #f0f7ff;
+}
+
+.detailIcon {
+  font-size: 1.8rem;
+  color: #4CAF50;
+}
+
+.detailContent {
+  flex: 1;
+}
+
+.detailLabel {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.detailValue {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Action card styles */
+.actionCard {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+}
+
+.actionTitle {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.actionText {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.progressContainer {
+  margin-bottom: 25px;
+}
+
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.progressBar {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: white;
+  width: 65%;
+  border-radius: 5px;
+}
+
+.donateButton {
+  display: block;
+  width: 100%;
+  background-color: white;
+  color: #4CAF50;
+  border: none;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.donateButton:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.volunteerButton {
+  display: block;
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.volunteerButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Bank info card */
+.bankInfoCard {
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid #2196F3;
+}
+
+.bankInfoTitle {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2c3e50;
+}
+
+.bankIcon {
+  font-size: 1.5rem;
+}
+
+.bankInfoItem {
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.bankInfoLabel {
+  width: 130px;
+  font-weight: 500;
+  color: #555;
+}
+
+.bankInfoValue {
+  flex: 1;
+  font-weight: 500;
+}
+
+.bankNote {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #e3f2fd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1976D2;
+}
+
+/* Loading and not found states */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(76, 175, 80, 0.2);
+  border-top: 5px solid #4CAF50;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loadingText {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.notFoundContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.notFoundIcon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #f44336;
+}
+
+.notFoundTitle {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.notFoundText {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 500px;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+  .contentWrapper {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+  }
+  
+  .heroImageContainer {
+    height: 300px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroImageContainer {
+    height: 250px;
+  }
+  
+  .title {
+    font-size: 1.7rem;
+  }
+  
+  .metaInfo {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Floating action buttons */
+.floatingActions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.shareButton {
+  color: #2563eb;
+}
+
+.reportButton {
+  color: #dc2626;
+}
+
+.buttonIcon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .actionButton span {
+    display: none;
+  }
+  
+  .actionButton {
+    padding: 10px;
+    border-radius: 50%;
+  }
+  
+  .buttonIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+/* Thêm các style cho hình ảnh */
+.heroImageContainer {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Điều chỉnh chiều cao theo nhu cầu */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imageSkeleton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  z-index: 2;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.heroImage {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.heroImage.loaded {
+  opacity: 1;
+}
+
+/* Floating action buttons */
+.floatingActions {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+.bankTitle {
+  color: #1976d2;
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bankContainer {
+  background-color: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.bankRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.bankLabel {
+  font-weight: bold;
+  color: #1565c0;
+}
+
+.bankValue {
+  color: #0d47a1;
+}
+
+.bankNote {
+  margin-top: 12px;
+  background-color: #bbdefb;
+  padding: 8px;
+  border-left: 4px solid #1976d2;
+  color: #0d47a1;
+  font-style: italic;
+  border-radius: 4px;
+}

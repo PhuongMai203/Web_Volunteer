@@ -1,0 +1,35 @@
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(220, 36, 36, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #2f3133;
+  text-align: center;
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0.5rem 0;
+}
+.statRow strong {
+  color: #007bff;
+}
+
+
+.value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ff9933;
+  text-align: right;
+  flex: 3;
+  word-break: break-word;
+}

@@ -1,0 +1,145 @@
+.rankPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+  background: linear-gradient(135deg, #fff8f0, #fff5e1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.heading {
+  font-size: 28px;
+  font-weight: bold;
+  color: #d35400;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rankBadge {
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.rankBadge:hover {
+  transform: scale(1.05);
+}
+
+.rankEmoji {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.rankLabel {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.rankScore {
+  font-size: 16px;
+  color: #fff9d5;
+}
+
+.progressWrapper {
+  margin: 20px 0;
+}
+
+.progressBar {
+  width: 100%;
+  height: 12px;
+  background: #f1f1f1;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progress {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease;
+}
+
+.rankList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px 0;
+}
+
+.rankItem {
+  background: #fff7e6;
+  border: 2px solid #ffc77d;
+  border-radius: 8px;
+  padding: 10px 16px;
+  min-width: 120px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.rankItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+}
+
+.rankName {
+  display: block;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.rankRange {
+  font-size: 13px;
+  color: #666;
+}
+
+.certificateWrapper {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.certificate {
+  background: linear-gradient(135deg, #fffaf0, #fff0d9);
+  border: 2px dashed #ffb347;
+  padding: 20px 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 4px 12px rgba(255, 165, 0, 0.2);
+}
+
+.certificate h2 {
+  font-size: 22px;
+  color: #d35400;
+  margin-bottom: 12px;
+}
+
+.certificate p {
+  font-size: 16px;
+  color: #555;
+}
+
+.exportButton {
+  background: linear-gradient(90deg, #70ff50b7, #009c1d);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.exportButton:hover {
+  background: linear-gradient(90deg, #32b430, #1ab805);
+}
