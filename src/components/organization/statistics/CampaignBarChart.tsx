@@ -99,9 +99,10 @@ export default function CampaignBarChart({ userId }: { userId: string | null }) 
         }
       });
 
-      const years = Array.from(new Set(Object.keys(stats).map(k => parseInt(k.split("-")[0])))).sort();
+      const currentYear = new Date().getFullYear();
+      const years = Array.from({ length: 11 }, (_, i) => currentYear + i);
       setAvailableYears(years);
-      setSelectedYear(years.includes(new Date().getFullYear()) ? new Date().getFullYear() : years[0]);
+      setSelectedYear(currentYear);
 
       const sortedData = Object.values(stats).sort((a, b) => a.month.localeCompare(b.month));
       setChartData(sortedData);

@@ -31,23 +31,25 @@ export default function PageTransitionWrapper({ children }: PageTransitionWrappe
     return <div className="organization-layout">{children}</div>;
   }
 
-  return (
-    <>
-      {!isPrivacyPage && <Header />}
+return (
+  <div style={{ backgroundColor: "#fff7f2", minHeight: "100vh" }}>
+    {!isPrivacyPage && <Header />}
 
-      {isContactPage ? (
-        <div className="w-full min-h-screen overflow-hidden">{children}</div>
-      ) : (
-        <div className="flex">
-          <main className="flex-1 p-6">
-            {showBanner && <Banner />}
-            <div className="mt-10">{children}</div>
-          </main>
-        </div>
-      )}
+    {isContactPage ? (
+      <div className="w-full min-h-screen overflow-hidden">{children}</div>
+    ) : (
+      <div className="flex">
+        <main className="flex-1 p-6">
+          {showBanner && <Banner />}
+          <div className="mt-10">{children}</div>
+        </main>
+      </div>
+    )}
 
-      <Footer />
-      <ChatBox />
-    </>
-  );
+    <Footer />
+    <ChatBox />
+  </div>
+);
+
+
 }

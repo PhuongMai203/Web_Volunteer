@@ -1,90 +1,92 @@
 .sidebar {
-  width: 16rem; /* tương đương w-64 */
+  width: 16rem;
   background: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06); /* tương đương shadow-md */
-  padding: 1rem; /* tương đương p-4 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  padding: 1rem;
   z-index: 20;
   height: 100%;
-  transition: transform 0.3s;
-  border-right: 1px solid #fde68a; /* tương đương border-amber-100 */
+  transition: transform 0.3s ease;
+  border-right: 1px solid #fde68a;
   position: fixed;
-}
-
-@media (min-width: 768px) {
-  .sidebar {
-    transform: translateX(0);
-    position: static;
-  }
-}
-
-.sidebarHidden {
+  top: 0;
+  left: 0;
   transform: translateX(-100%);
 }
 
 .sidebarVisible {
   transform: translateX(0);
 }
+.hide {
+  transform: translateX(-100%);
+}
+
+/* Hiện sidebar */
+.show {
+  transform: translateX(0);
+}
+
+
 .menuWrapper {
-  margin-top: 0.5rem;   /* mt-2 */
-  margin-bottom: 1.5rem; /* mb-6 */
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .menuTitle {
-  font-size: 1.125rem;   /* text-lg */
-  font-weight: 600;      /* font-semibold */
-  color: #78350f;        /* text-amber-800 -> mã màu chính xác của amber-800 */
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #78350f;
 }
+
 .navList {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem; /* space-y-1 tương đương khoảng cách giữa các item */
+  gap: 0.25rem;
 }
 
 .navItem {
   display: flex;
   align-items: center;
-  gap: 0.5rem;   /* space-x-2 */
+  gap: 0.5rem;
   padding: 0.75rem;
   border-radius: 0.5rem;
   transition: all 0.3s ease;
-  color: #4b5563; /* text-gray-600 */
+  color: #4b5563;
   text-decoration: none;
 }
 
 .navItem:hover {
-  background-color: #fffbeb; /* hover:bg-amber-50 */
-  color: #92400e; /* hover:text-amber-700 */
+  background-color: #fffbeb;
+  color: #92400e;
 }
 
 .navItemActive {
-  background-color: #fffbeb; /* bg-amber-50 */
-  color: #92400e; /* text-amber-700 */
-  border-left: 4px solid #d97706; /* border-amber-600 */
+  background-color: #fffbeb;
+  color: #92400e;
+  border-left: 4px solid #d97706;
   font-weight: 600;
 }
 
 .navIcon {
-  font-size: 1.125rem; /* text-lg */
-  color: #6b7280; /* text-gray-500 */
+  font-size: 1.125rem;
+  color: #6b7280;
 }
 
 .navIconActive {
-  color: #d97706; /* text-amber-600 */
+  color: #d97706;
 }
 
-/* System Status Block */
 .systemStatus {
-  margin-top: 2rem; /* mt-8 */
+  margin-top: 2rem;
   padding: 0.75rem;
-  background-color: #fffbeb; /* bg-amber-50 */
+  background-color: #fffbeb;
   border-radius: 0.5rem;
-  border: 1px solid #fde68a; /* border-amber-100 */
+  border: 1px solid #fde68a;
 }
 
 .systemStatusTitle {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #78350f; /* text-amber-800 */
+  color: #78350f;
   margin-bottom: 0.5rem;
 }
 
@@ -97,16 +99,15 @@
   width: 0.75rem;
   height: 0.75rem;
   border-radius: 9999px;
-  background-color: #22c55e; /* bg-green-500 */
+  background-color: #22c55e;
   margin-right: 0.5rem;
 }
 
 .statusText {
   font-size: 0.875rem;
-  color: #92400e; /* text-amber-700 */
+  color: #92400e;
 }
 
-/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
@@ -117,5 +118,45 @@
 @media (min-width: 768px) {
   .overlay {
     display: none;
+  }
+  .sidebar {
+    transform: translateX(0);
+    position: static;
+    width: 16rem;
+    height: auto;
+    box-shadow: none;
+    border-right: 1px solid #fde68a;
+  }
+}
+
+/* Responsive cho iPad Mini trở xuống (dưới 480px) */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 14rem;
+  }
+
+  .menuTitle {
+    font-size: 1rem;
+  }
+
+  .navItem {
+    padding: 0.5rem;
+  }
+
+  .navIcon {
+    font-size: 1rem;
+  }
+
+  .systemStatus {
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebarOpen {
+    transform: translateX(0);
   }
 }

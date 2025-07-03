@@ -6,6 +6,7 @@ import {  auth } from "@/lib/firebase";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
 
 interface UserInfo {
   uid: string;
@@ -41,11 +42,11 @@ const handleLogout = async () => {
     await signOut(auth);
     localStorage.removeItem("userInfo");
     localStorage.removeItem("accountPageData"); // Xóa luôn dữ liệu cache
-    alert("Bạn đã đăng xuất thành công!");
+    toast.success("Bạn đã đăng xuất thành công!");
     window.location.href = "/account"; // Reload toàn bộ trang cho chắc chắn
   } catch (error) {
     console.error("Lỗi khi đăng xuất:", error);
-    alert("Đã xảy ra lỗi khi đăng xuất.");
+    toast.error("Đã xảy ra lỗi khi đăng xuất.");
   }
 };
 const handleDeleteAccount = async () => {

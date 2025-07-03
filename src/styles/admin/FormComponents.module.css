@@ -1,0 +1,154 @@
+.section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #fed7aa;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c05621;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #fdba74;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: 0.25rem;
+  color: #c05621;
+  font-weight: 500;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid #fdba74;
+  border-radius: 0.375rem;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #ed8936;
+  box-shadow: 0 0 0 2px rgba(237, 137, 54, 0.3);
+}
+
+.fileButton {
+  cursor: pointer;
+  background: #ffedd5;
+  color: #c05621;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid #fdba74;
+  transition: background 0.2s;
+}
+
+.fileButton:hover {
+  background: #fed7aa;
+}
+
+.rankCircle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+}
+.inputWithUnit {
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+.unit {
+  background: #fed7aa;
+  padding: 0 0.75rem;
+  display: flex;
+  align-items: center;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  height: 100%; /* Chiều cao khớp với ô input */
+  border: 1px solid #fdba74;
+  border-left: none;
+}
+
+.textArea {
+  padding: 1rem;
+  border: 2px solid #fdba74;
+  border-radius: 0.5rem;
+  outline: none;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.textArea:focus {
+  border-color: #ed8936;
+  box-shadow: 0 0 0 2px rgba(237, 137, 54, 0.3);
+}
+
+.charCount {
+  margin-top: 0.5rem;
+  text-align: right;
+  font-size: 0.875rem;
+  color: #c05621;
+}
+
+/* ===== Responsive cho Tablet (iPad) và Điện thoại ===== */
+@media (max-width: 768px) {
+  .section {
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.125rem;
+  }
+
+  .input,
+  .textArea {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .fileButton {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .unit {
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 0.75rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+  }
+
+  .input,
+  .textArea {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
+
+  .fileButton {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .unit {
+    padding: 0 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .charCount {
+    font-size: 0.75rem;
+  }
+}

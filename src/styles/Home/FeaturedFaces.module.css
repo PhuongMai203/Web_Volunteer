@@ -1,0 +1,138 @@
+.featureBox {
+  background: #ffffff;
+  border: 1px solid #fcd9b6;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 0 8px rgba(255, 165, 0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.heading {
+  color: #c2410c;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.scrollContainer {
+  position: relative;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.peopleRow {
+  display: flex;
+  gap: 20px;
+  min-width: max-content;
+  padding: 0 4px;
+}
+
+.personCard {
+  width: 100px;
+  min-width: 100px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.personAvatar {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid #fcd9b6;
+}
+
+.personName {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #c2410c;
+}
+
+.rankBadge {
+  margin-top: 4px;
+  font-size: 12px;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+.rankVIP {
+  background-color: #facc15;
+  color: #854d0e;
+}
+
+.rankVang {
+  background-color: #fbbf24;
+  color: #78350f;
+}
+
+.rankBac {
+  background-color: #d1d5db;
+  color: #374151;
+}
+
+.rankDefault {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.emptyMessage {
+  font-size: 14px;
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* ==================== RESPONSIVE CHO ĐIỆN THOẠI ==================== */
+
+@media (max-width: 640px) {
+  
+  .featureBox {
+    margin: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    max-width: 350px;
+  }
+
+  .heading {
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  .scrollContainer {
+    padding-bottom: 4px;
+    
+  }
+
+  .peopleRow {
+    gap: 12px;
+  }
+
+  .personCard {
+    width: 80px;
+    min-width: 80px;
+  }
+
+  .personAvatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .personName {
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  .rankBadge {
+    font-size: 10px;
+    padding: 1px 6px;
+  }
+}

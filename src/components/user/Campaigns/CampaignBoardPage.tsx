@@ -16,6 +16,7 @@ import Swal from "sweetalert2";
 import CampaignCardActions from "../Home/sub/CampaignCardActions"; 
 import { createCampaignDynamicLink } from "../../../lib/firebase/dynamicLinks";
 import useBookmarks from "../../../lib/firebase/useBookmarks";
+import { getAuth } from "firebase/auth";
 
 const filters = [
   "Tất cả",
@@ -67,14 +68,24 @@ export default function CampaignBoardPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [campaigns, setCampaigns] = useState<FeaturedActivity[]>([]);
   const searchParams = useSearchParams();
-  const sortFilter = searchParams.get("sort") || "default";
+  const sortFilter = searchParams?.get("sort") || "default";
   const router = useRouter();
   const [hasMounted, setHasMounted] = useState(false);
   const { bookmarkedIds, toggleBookmark } = useBookmarks();
-  useEffect(() => {
+
+useEffect(() => {
+  if (typeof window !== "undefined") {
     AOS.init({ duration: 800, once: true });
     setHasMounted(true);
-  }, []);
+
+    return () => {
+      const aosElements = document.querySelectorAll("[data-aos]");
+      aosElements.forEach((el) => {
+        el.classList.remove("aos-animate");
+      });
+    };
+  }
+}, []);
 
   useEffect(() => {
     const fetchCampaigns = async () => {
@@ -145,7 +156,17 @@ export default function CampaignBoardPage() {
     }
   }
 };
+  const handleToggleBookmark = (campaignId: string) => {
+    const auth = getAuth();
+    const user = auth.currentUser;
 
+    if (!user) {
+      Swal.fire("Vui lòng đăng nhập để lưu chiến dịch yêu thích.", "", "info");
+      return;
+    }
+
+    toggleBookmark(campaignId);
+  };
   return (
     <>
       <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
@@ -193,11 +214,11 @@ export default function CampaignBoardPage() {
                         <FaImage className="text-gray-400 text-5xl" />
                       </div>
                     )}
-                   <div
-                    className={`${styles.flagIcon} ${bookmarkedIds.includes(campaign.id) ? styles.flagIconActive : ""}`}
-                    onClick={() => toggleBookmark(campaign.id)}
-                    style={{ cursor: "pointer" }}
-                  >
+                    <div
+                      className={`${styles.flagIcon} ${bookmarkedIds.includes(campaign.id) ? styles.flagIconActive : ""}`}
+                      onClick={() => handleToggleBookmark(campaign.id)}
+                      style={{ cursor: "pointer" }}
+                    >
                     <FaRegFlag
                       className={bookmarkedIds.includes(campaign.id) ? "text-orange-400" : "text-orange-600"}
                     />

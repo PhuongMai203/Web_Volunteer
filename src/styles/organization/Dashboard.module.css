@@ -1,4 +1,3 @@
-
 .mainContent {
   margin-left: 10px;
   overflow-y: auto;
@@ -13,7 +12,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
-justify-content: start;
+  justify-content: start;
 }
 
 .campaignCard {
@@ -25,9 +24,8 @@ justify-content: start;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease;
-  max-width: 400px; /* Giới hạn thẻ card không bị to toàn màn hình */
+  max-width: 400px;
   width: 100%;
-
 }
 
 .campaignCard:hover {
@@ -52,6 +50,7 @@ justify-content: start;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  color:#252525;
 }
 
 .cardTitle {
@@ -115,10 +114,103 @@ justify-content: start;
   background-color: #ff9405;
 }
 
-/* Responsive */
+/* Filter Bar */
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  color: #743206;
+}
+
+.searchInput {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+  min-width: 200px;
+  color: #252525;
+}
+.dateInput{
+  color: #252525;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.searchButton {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.searchButton:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Tablet */
+@media (max-width: 1024px) {
+  .mainContent {
+    padding: 15px;
+  }
+
+  .cardGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+
+  .cardImageWrapper {
+    height: 140px;
+  }
+}
+
+/* Responsive Mobile */
 @media (max-width: 768px) {
-  .dashboardContainer {
+  .mainContent {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cardImageWrapper {
+    height: 130px;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+    color: #252525;
+  }
+
+  .filterBar {
     flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .searchInput {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+
+  .searchButton {
+    width: 100%;
   }
 
   .sidebar {
@@ -143,38 +235,3 @@ justify-content: start;
     border-bottom: 3px solid #ffb655;
   }
 }
-.filterBar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.filterSelect {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.searchInput {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  flex: 1;
-  min-width: 200px;
-}
-
-.searchButton {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1.2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.searchButton:hover {
-  background-color: #0056b3;
-}
-

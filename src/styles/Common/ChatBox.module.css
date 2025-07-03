@@ -134,3 +134,72 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+@media (max-width: 768px) {
+  .chatContainer {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .chatBox {
+    width: 90vw;
+    height: 75vh;
+    border-radius: 1.5rem;
+  }
+
+  .chatInputNew {
+    font-size: 13px;
+    height: 34px;
+  }
+
+  .sendCircleButton {
+    width: 34px;
+    height: 34px;
+  }
+
+  .sendIcon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatContainer {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .chatBox {
+    width: 70vw;
+    height: 50vh;
+    border-radius: 1rem;
+  }
+
+  .chatHeader {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .robotIcon {
+    font-size: 0.9rem;
+  }
+
+  .chatInputNew {
+    font-size: 12px;
+    height: 32px;
+  }
+
+  .sendCircleButton {
+    width: 32px;
+    height: 32px;
+  }
+
+  .sendIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .userMessage, .botMessage {
+    max-width: 85%;
+    font-size: 13px;
+  }
+}

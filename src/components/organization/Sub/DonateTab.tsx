@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import styles from "../../../styles/organization/CampaignDetail.module.css";
+import styles from "../../../styles/organization/DonateTab.module.css";
 import { FaFileExcel } from "react-icons/fa";
 import * as XLSX from "xlsx";
 

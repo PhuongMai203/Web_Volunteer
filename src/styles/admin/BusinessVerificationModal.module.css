@@ -1,0 +1,179 @@
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 40px 25px 25px;
+  position: relative;
+  border: 3px solid #ff9800;
+  box-shadow: 0 4px 20px rgba(255, 152, 0, 0.3);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #ff5722;
+  transition: all 0.3s ease;
+  line-height: 1;
+  padding: 0 10px;
+}
+
+.closeButton:hover {
+  color: #e65100;
+  transform: scale(1.1);
+}
+
+/* Đổi selector h2 thành class */
+.title {
+  color: #e65100;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #ffb74d;
+  padding-bottom: 10px;
+}
+
+.infoGroup {
+  background: #fff3e0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ff9800;
+}
+
+.infoGroup p {
+  margin: 10px 0;
+  color: #5d4037;
+  font-size: 1rem;
+}
+
+/* Sửa strong thành class nếu cần */
+.infoGroup .strongText {
+  color: #e65100;
+  width: 180px;
+  display: inline-block;
+}
+
+.imageGroup {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.imageGroup div {
+  background: #fff8e1;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.imageGroup div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+}
+
+.imageGroup .imageTitle {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ef6c00;
+}
+
+.imageGroup img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 2px solid #ffcc80;
+}
+
+.actionArea {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.approveButton,
+.rejectButton {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  min-width: 150px;
+}
+
+.approveButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.approveButton:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+.rejectButton {
+  background-color: #f44336;
+  color: white;
+}
+
+.rejectButton:hover:not(:disabled) {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.rejectButton:disabled {
+  background-color: #ffab91;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.rejectInputArea {
+  margin: 15px 0;
+  animation: fadeIn 0.3s ease;
+}
+
+.rejectInputArea input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ff9800;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.rejectInputArea input:focus {
+  border-color: #ff5722;
+  box-shadow: 0 0 0 2px rgba(255, 87, 34, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,7 +1,18 @@
 'use client';
 import styles from "@/styles/admin/WelcomeSection.module.css";
 
-export default function WelcomeSection({ adminData }) {
+interface AdminData {
+  name: string;
+  email: string;
+  role: string;
+  isApproved: boolean;
+}
+
+interface WelcomeSectionProps {
+  adminData: AdminData;
+}
+
+export default function WelcomeSection({ adminData }: WelcomeSectionProps) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.topSection}>

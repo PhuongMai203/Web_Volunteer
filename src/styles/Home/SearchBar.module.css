@@ -1,0 +1,49 @@
+/* Mặc định cho PC */
+.searchInput {
+  width: 60%;
+  max-width: 500px;
+  padding: 0.75rem 1.25rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid transparent;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  color: black;
+  font-size: 1rem;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Hover và Focus */
+.searchInput:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-color: #fdba74;
+}
+
+.searchInput:focus {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  border-color: #fb923c;
+  outline: 2px solid #fed7aa;
+}
+
+/* Giao diện điện thoại - nằm sát trái */
+@media (max-width: 640px) {
+  .searchInput {
+    width: 80%;
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+    margin: 0;   
+  max-width: 340px;
+  }
+}
+
+/* Layout bọc ngoài ô tìm kiếm căn sát trái trên điện thoại */
+@media (max-width: 640px) {
+  .searchBarWrapper {
+  
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 0rem;
+  }
+}

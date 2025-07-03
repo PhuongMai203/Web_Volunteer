@@ -27,14 +27,27 @@ interface Campaign {
 export default function CampaignList() {
   const [campaigns] = useState<Campaign[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [hasMounted, setHasMounted] = useState(false); // Thêm dòng này
 
-  useEffect(() => {
+useEffect(() => {
+  if (typeof window !== "undefined") {
     AOS.init({ duration: 800, once: true });
-  }, []);
+    setHasMounted(true);
+
+    return () => {
+      const aosElements = document.querySelectorAll("[data-aos]");
+      aosElements.forEach((el) => {
+        el.classList.remove("aos-animate");
+      });
+    };
+  }
+}, []);
 
   const filteredCampaigns = campaigns.filter((campaign) =>
     campaign.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  if (!hasMounted) return null; // Chặn render nếu chưa mounted để tránh lỗi DOM
 
   return (
     <div className="w-full">
@@ -88,3 +101,4 @@ export default function CampaignList() {
     </div>
   );
 }
+

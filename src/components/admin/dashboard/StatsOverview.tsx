@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/admin/UserManagement.module.css";
+import styles from "@/styles/admin/StatsOverview.module.css";
 import { FaUser, FaUserCheck, FaUserTimes, FaUserTie } from "react-icons/fa";
 
 interface StatsOverviewProps {

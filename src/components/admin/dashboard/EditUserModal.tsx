@@ -1,6 +1,6 @@
 'use client';
 import { FaSave, FaTimes } from 'react-icons/fa';
-import styles from "@/styles/admin/UserManagement.module.css";
+import styles from "@/styles/admin/EditUserModal.module.css";
 
 interface EditUserModalProps {
   selectedUser: any;

@@ -1,14 +1,13 @@
-/* Certificate.module.css */
 .certificateContainer {
   position: relative;
-  width: 800px;
-  min-height: 600px;
+  width: 100%;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 40px 60px;
+  padding: 5%;
   background-color: #fff8e1;
   border: 3px solid #e65100;
   border-radius: 18px;
-  box-shadow: 4px 6px 12px rgba(255, 152, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
   font-family: 'Merriweather', serif;
@@ -20,134 +19,155 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-30deg);
-  font-size: 120px;
+  font-size: 20vw;
   color: rgba(255, 213, 79, 0.1);
   z-index: 0;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .nationalTitle {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
   color: #c62828;
   text-transform: uppercase;
+  position: relative;
+  z-index: 1;
 }
 
 .nationalSubtitle {
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   color: #c62828;
+  position: relative;
+  z-index: 1;
 }
 
 .separator {
   height: 2px;
   background: linear-gradient(to right, transparent, #ff9800, transparent);
-  margin: 15px 0;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 .organization {
-  font-size: 1.4rem;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
   font-weight: bold;
-  margin: 25px 0;
+  margin: 2rem 0;
   color: #e65100;
+  position: relative;
+  z-index: 1;
 }
 
 .awardText {
-  font-size: 1.2rem;
-  margin: 10px 0;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 1rem 0;
   font-style: italic;
-  color: #5d4037;
+  color: #4e342e;
+  position: relative;
+  z-index: 1;
 }
 
 .certificateTitle {
-  font-size: 2.5rem;
-  margin: 20px 0;
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  margin: 1.5rem 0;
   color: #e65100;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   position: relative;
   display: inline-block;
+  z-index: 1;
 }
 
 .certificateTitle::after {
   content: "";
   position: absolute;
-  bottom: -10px;
-  left: 20%;
-  right: 20%;
+  bottom: -0.5rem;
+  left: 10%;
+  right: 10%;
   height: 3px;
   background: linear-gradient(to right, #ff9800, #ff5722, #ff9800);
 }
 
 .volunteerName {
-  font-size: 2.8rem;
-  margin: 30px 0;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  margin: 2rem 0;
   color: #bf360c;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
 }
 
 .achievementText {
-  font-size: 1.2rem;
-  margin: 40px 30px;
-  line-height: 1.8;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 2rem 1rem;
+  line-height: 1.6;
   color: #4e342e;
+  position: relative;
+  z-index: 1;
 }
 
 .highlight {
   font-weight: bold;
   color: #e65100;
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
 }
 
 .footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
-  padding: 0 20px;
+  margin-top: 3rem;
   position: relative;
+  z-index: 1;
+  gap: 20px;
 }
 
 .leftInfo {
   text-align: left;
-  font-size: 1.1rem;
-  color: #5d4037;
-  line-height: 1.8;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: #4e342e;
+  line-height: 1.6;
+  flex: 1;
+  min-width: 200px;
 }
 
 .rightInfo {
   text-align: center;
   position: relative;
-  padding-right: 20px;
+  flex: 1;
+  min-width: 200px;
 }
 
 .representativeTitle {
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-  color: #5d4037;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 0.5rem;
+  color: #4e342e;
 }
 
 .representativeRole {
   font-style: italic;
-  color: #5d4037;
-  margin-bottom: 5px;
+  color: #4e342e;
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .signatureContainer {
   position: relative;
-  height: 120px;
-  margin-bottom: 0px;
+  height: 100px;
+  margin-bottom: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Chữ ký với font nghệ thuật */
 .signature {
-  font-family: 'Segoe Script', cursive;
-  font-size: 2rem;
+  font-family: 'Parisienne', cursive;
+  font-size: clamp(1.5rem, 5vw, 2rem);
   color: #000;
   position: relative;
   z-index: 2;
@@ -158,22 +178,18 @@
   -webkit-text-fill-color: transparent;
   padding: 0 5px;
   letter-spacing: 1px;
-  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
 }
 
-
-/* Con dấu nằm phía sau chữ ký */
 .seal {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(10deg);
-  width: 110px;
-  height: 110px;
+  width: clamp(70px, 15vw, 110px);
+  height: clamp(70px, 15vw, 110px);
   border: 3px solid #d32f2f;
   border-radius: 50%;
-background-color: transparent;
-
+  background-color: transparent;
   z-index: 1;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   opacity: 0.8;
@@ -185,8 +201,8 @@ background-color: transparent;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90px;
-  height: 90px;
+  width: 80%;
+  height: 80%;
   border: 2px solid #d32f2f;
   border-radius: 50%;
 }
@@ -197,21 +213,52 @@ background-color: transparent;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 100px;
+  font-size: clamp(60px, 12vw, 100px);
   color: #d32f2f;
   opacity: 0.4;
 }
 
 .signatureHint {
-  font-size: 0.9rem;
-  color: #5d4037;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: #4e342e;
   font-style: italic;
-  margin-top: 0px;
+  margin-top: 0.5rem;
   position: relative;
   z-index: 3;
 }
 
-/* Thêm font nghệ thuật cho chữ ký */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .leftInfo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .certificateContainer {
+    padding: 8%;
+  }
+  
+  .volunteerName {
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificateContainer {
+    border-width: 2px;
+    border-radius: 12px;
+  }
+  
+  .watermark {
+    font-size: 25vw;
+  }
+  
+  .achievementText {
+    margin: 1.5rem 0.5rem;
+  }
+}

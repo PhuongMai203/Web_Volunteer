@@ -24,7 +24,8 @@ export default function SidebarAdmin({ sidebarOpen, setSidebarOpen }: SidebarAdm
 
   return (
     <>
-      <nav className={styles.sidebar}>
+      <nav className={`${styles.sidebar} ${sidebarOpen ? styles.sidebarOpen : ""}`}>
+
         <div className={styles.menuWrapper}>
           <h2 className={styles.menuTitle}>Menu Quản Trị</h2>
         </div>
@@ -35,6 +36,7 @@ export default function SidebarAdmin({ sidebarOpen, setSidebarOpen }: SidebarAdm
               key={item.id}
               href={item.href}
               className={`${styles.navItem} ${pathname.startsWith(item.href) ? styles.navItemActive : ''}`}
+              onClick={() => setSidebarOpen(false)}
             >
               <span className={`${styles.navIcon} ${pathname.startsWith(item.href) ? styles.navIconActive : ''}`}>
                 {item.icon}
@@ -43,6 +45,7 @@ export default function SidebarAdmin({ sidebarOpen, setSidebarOpen }: SidebarAdm
             </Link>
           ))}
         </div>
+
 
         <div className={styles.systemStatus}>
           <h3 className={styles.systemStatusTitle}>Trạng thái hệ thống</h3>

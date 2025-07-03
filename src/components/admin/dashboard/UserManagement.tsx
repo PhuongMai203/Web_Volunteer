@@ -8,6 +8,7 @@ import { db, auth } from "@/lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import styles from "@/styles/admin/UserManagement.module.css";
 import { FaSearch, FaPlus, FaFilter, FaUser } from 'react-icons/fa';
+import BusinessVerificationModal from "./BusinessVerificationModal";
 
 export default function UserManagementPage() {
   const [users, setUsers] = useState<any[]>([]);
@@ -19,6 +20,7 @@ export default function UserManagementPage() {
   const [showAddModal, setShowAddModal] = useState(false);
   const [newUser, setNewUser] = useState({ email: "", name: "", password: "" });
   const resultsPerPage = 10;
+  const [verificationUser, setVerificationUser] = useState<any | null>(null);
 
   const fetchUsers = async () => {
     try {
@@ -49,18 +51,18 @@ export default function UserManagementPage() {
     }
   };
 
-  const handleApproveOrganization = async (user: any) => {
-    try {
-      await updateDoc(doc(db, "users", user.id), { isApproved: true });
-      setUsers(prev =>
-        prev.map(u =>
-          u.id === user.id ? { ...u, isApproved: true } : u
-        )
-      );
-    } catch (error) {
-      console.error("Lỗi phê duyệt tổ chức:", error);
-    }
-  };
+  // const handleApproveOrganization = async (user: any) => {
+  //   try {
+  //     await updateDoc(doc(db, "users", user.id), { isApproved: true });
+  //     setUsers(prev =>
+  //       prev.map(u =>
+  //         u.id === user.id ? { ...u, isApproved: true } : u
+  //       )
+  //     );
+  //   } catch (error) {
+  //     console.error("Lỗi phê duyệt tổ chức:", error);
+  //   }
+  // };
 
   const handleSave = async (updatedUser: any) => {
     try {
@@ -87,6 +89,18 @@ export default function UserManagementPage() {
       }
     }
   };
+const handleEdit = (user: any) => {
+  setSelectedUser(user);
+};
+
+const handleLock = (user: any) => {
+  handleLockAccount(user);
+};
+
+const handleApprove = (user: any) => {
+  setVerificationUser(user);
+};
+
 
 const handleAddUser = async () => {
   if (!newUser.email || !newUser.name || !newUser.password) {
@@ -199,7 +213,7 @@ const handleAddUser = async () => {
           </button>
         </div>
 
-        <UserTable 
+        <UserTable
           users={paginatedUsers}
           totalUsers={filteredUsers.length}
           currentPage={currentPage}
@@ -208,12 +222,13 @@ const handleAddUser = async () => {
           getUserStatus={getUserStatus}
           displayRole={displayRole}
           formatDate={formatDate}
-          onEdit={(user) => setSelectedUser(user)}
-          onLock={handleLockAccount}
-          onApprove={handleApproveOrganization}
-          loading={loading}
+          onEdit={handleEdit}
+          onLock={handleLock}
+          onApprove={handleApprove}
           onDelete={handleDelete}
+          loading={loading}
         />
+
 
         {selectedUser && (
           <EditUserModal 
@@ -222,6 +237,22 @@ const handleAddUser = async () => {
             onSave={() => handleSave(selectedUser)} 
           />
         )}
+        {verificationUser && (
+          <BusinessVerificationModal
+            userId={verificationUser.id} // hoặc verificationUser.userId tùy bạn lấy gì làm ID của document
+            onClose={() => setVerificationUser(null)}
+            onApprove={() => {
+              fetchUsers();
+              setVerificationUser(null);
+            }}
+            onReject={(reason) => {
+              fetchUsers();
+              setVerificationUser(null);
+              console.log("Từ chối với lý do:", reason);
+            }}
+          />
+        )}
+
 
         {showAddModal && (
           <div className={styles.modalOverlay}>

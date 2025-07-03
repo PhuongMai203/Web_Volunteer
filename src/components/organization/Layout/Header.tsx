@@ -32,9 +32,7 @@ export default function HeaderAdmin({ sidebarOpen, setSidebarOpen }: HeaderAdmin
   return (
     <header className={styles.header}>
       <div className={styles.leftSection}>
-        <button className={styles.menuButton} onClick={() => setSidebarOpen(!sidebarOpen)}>
-          <FaBars />
-        </button>
+
         <div className={styles.logoWrapper}>
           <Image src="/images/logo.jpg" alt="Logo" width={48} height={48} className={styles.logoImage} />
         </div>
@@ -49,7 +47,12 @@ export default function HeaderAdmin({ sidebarOpen, setSidebarOpen }: HeaderAdmin
         {showNotification && (
           <NotificationPopup onClose={() => setShowNotification(false)} />
         )}
+         <button className={styles.menuButton} onClick={() => setSidebarOpen(!sidebarOpen)}>
+          <FaBars />
+        </button>
       </div>
+      
     </header>
+
   );
 }

@@ -1,0 +1,96 @@
+.participantList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: #333;
+}
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.exportButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.exportButton:hover {
+  background-color: #218838;
+}
+.participantItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+.participantName {
+  flex-grow: 1;
+  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.donationAmount {
+  margin-left: auto;
+  font-weight: bold;
+  color: green;
+}
+@media (max-width: 1024px) {
+  .participantItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .participantName {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  .donationAmount {
+    margin-left: 0;
+    color: green;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .exportButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .participantItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .participantName {
+    font-size: 14px;
+  }
+
+  .donationAmount {
+    font-size: 14px;
+  }
+}

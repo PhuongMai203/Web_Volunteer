@@ -1,6 +1,6 @@
 'use client';
 import { FaEdit, FaLock, FaLockOpen, FaTrash, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import styles from "@/styles/admin/UserManagement.module.css";
+import styles from "@/styles/admin/UserTable.module.css";
 
 interface UserTableProps {
   users: any[];
@@ -79,7 +79,7 @@ export default function UserTable({
                 <td>{formatDate(user.createdAt)}</td>
                 <td>
                   <div className={styles.actionButtons}>
-                    {/* Nếu là tổ chức chưa phê duyệt thì chỉ hiện nút Phê duyệt */}
+                    
                     {isOrganization && !isApproved ? (
                       <button
                         className={`${styles.actionButton} ${styles.approveButton}`}

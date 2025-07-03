@@ -4,7 +4,7 @@ import { useState } from "react";
 import { auth, db } from "../../lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import styles from "../../styles/auth/SignIn.module.css";
+import styles from "../../styles/auth/SignupForm.module.css";
 import PasswordCheck from "./PasswordCheck";
 import { useRouter } from "next/navigation";
 

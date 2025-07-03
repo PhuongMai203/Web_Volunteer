@@ -1,43 +1,28 @@
 .supportSection {
-  margin-top: 5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-top: 3rem;
+  padding: 1rem;
   width: 100%;
 }
 
 .sectionHeading {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: bold;
   text-align: center;
-  color: #ea580c; /* text-orange-600 */
-  margin-bottom: 2.5rem;
+  color: #ea580c;
+  margin-bottom: 2rem;
 }
 
 .sectionContent {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  align-items: flex-start;
-  max-width: 72rem; /* max-w-6xl */
-  margin-left: auto;
-  margin-right: auto;
+  gap: 2rem;
+  max-width: 72rem;
+  margin: 0 auto;
 }
 
-@media (min-width: 1024px) {
-  .sectionContent {
-    flex-direction: row;
-  }
-}
-
-.leftCol {
+.leftCol,
+.rightCol {
   width: 100%;
-  color: #1f2937; /* text-gray-800 */
-}
-
-@media (min-width: 1024px) {
-  .leftCol {
-    width: 50%;
-  }
 }
 
 .leftHeading {
@@ -47,13 +32,12 @@
 }
 
 .leftHeading span {
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   color: #f97316;
 }
 
 .leftHeading h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.25rem;
   color: #1e293b;
 }
 
@@ -61,23 +45,21 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .questionItem {
   display: flex;
-  align-items: flex-start;
   gap: 0.75rem;
-  background-color: #fff7ed;
+  background: #fff7ed;
   padding: 1rem;
   border-left: 4px solid #fb923c;
   border-radius: 0.5rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .questionItem span {
   color: #fb923c;
-  font-size: 1.125rem;
-  margin-top: 0.25rem;
+  font-size: 1.25rem;
 }
 
 .questionItem p {
@@ -86,34 +68,22 @@
 }
 
 .note {
-  font-size: 0.875rem;
-  color: #6b7280;
-  font-style: italic;
   margin-top: 0.5rem;
-}
-
-.rightCol {
-  width: 100%;
-}
-
-@media (min-width: 1024px) {
-  .rightCol {
-    width: 50%;
-  }
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-style: italic;
 }
 
 .supportBox {
-  background-color: #ffffff;
+  background: white;
   border: 1px solid #fed7aa;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .supportBox h3 {
   font-size: 1.125rem;
-  font-weight: 600;
   color: #ea580c;
   margin-bottom: 1rem;
 }
@@ -131,23 +101,18 @@
 .inputField,
 .textAreaField {
   width: 100%;
-  padding-left: 2.5rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem 0.5rem 2.5rem;
   border: 1px solid #d1d5db;
-  outline: none;
-}
-
-.inputField:focus,
-.textAreaField:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px #fdba74;
+  border-radius: 0.375rem;
 }
 
 .textAreaField {
   resize: vertical;
+}
+
+.inputField:focus,
+.textAreaField:focus {
+  outline: 2px solid #fdba74;
 }
 
 .icon {
@@ -168,22 +133,116 @@
   justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  .submitRow {
-    justify-content: flex-start;
-  }
-}
-
 .submitButton {
-  background-color: #22c55e;
+  background: #22c55e;
   color: white;
   font-weight: 600;
   padding: 0.5rem 1.5rem;
   border-radius: 0.375rem;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.2s ease;
+  width: 100%;
 }
 
 .submitButton:hover {
-  background-color: #16a34a;
+  background: #16a34a;
+}
+
+/* Tablet trở lên */
+@media (min-width: 768px) {
+  .sectionContent {
+    flex-direction: row;
+    gap: 3rem;
+  }
+
+  .leftCol,
+  .rightCol {
+    width: 50%;
+  }
+
+  .submitButton {
+    width: auto;
+  }
+}
+@media (max-width: 640px) {
+  .supportSection {
+    margin-top: 2rem;
+    padding: 1rem 0.5rem;
+    width: 350px;
+  }
+
+  .sectionHeading {
+    font-size: 1.25rem;
+    text-align: left;
+    padding-left: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionContent {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .leftCol,
+  .rightCol {
+    width: 100%;
+  }
+
+  .leftHeading {
+    gap: 0.5rem;
+  }
+
+  .leftHeading span {
+    font-size: 1.5rem;
+  }
+
+  .leftHeading h2 {
+    font-size: 1.25rem;
+  }
+
+  .questionList {
+    gap: 0.75rem;
+  }
+
+  .questionItem {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .questionItem p {
+    font-size: 0.95rem;
+  }
+
+  .note {
+    font-size: 0.85rem;
+  }
+
+  .supportBox {
+    padding: 1rem;
+  }
+
+  .supportBox h3 {
+    font-size: 1rem;
+  }
+
+  .inputField,
+  .textAreaField {
+    padding-left: 2rem;
+    padding-right: 0.75rem;
+  }
+
+  .icon {
+    left: 0.5rem;
+  }
+
+  .submitRow {
+    justify-content: center;
+  }
+
+  .submitButton {
+    width: 100%;
+    font-size: 1rem;
+  }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../../../styles/Home/CampaignList.module.css";
+import styles from "../../../styles/Home/SearchBar.module.css";
 
 interface SearchBarProps {
   searchTerm: string;
@@ -9,14 +9,15 @@ interface SearchBarProps {
 
 export default function SearchBar({ searchTerm, onSearchChange }: SearchBarProps) {
   return (
-    <div className="flex justify-center mb-6" data-aos="fade-down">
-      <input
-        type="text"
-        placeholder="🔍 Tìm chiến dịch..."
-        value={searchTerm}
-        onChange={(e) => onSearchChange(e.target.value)}
-        className={styles.searchInput}
-      />
-    </div>
+   <div className={`searchBarWrapper mb-6`} data-aos="fade-down">
+  <input
+    type="text"
+    placeholder="🔍 Tìm chiến dịch..."
+    value={searchTerm}
+    onChange={(e) => onSearchChange(e.target.value)}
+    className={styles.searchInput}
+  />
+</div>
+
   );
 }

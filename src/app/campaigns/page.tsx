@@ -1,6 +1,11 @@
 // src/app/campaigns/page.tsx
+import { Suspense } from "react";
 import CampaignBoardPage from "../../components/user/Campaigns/CampaignBoardPage";
 
 export default function CampaignsPage() {
-  return <CampaignBoardPage />;
+  return (
+    <Suspense fallback={<div>Đang tải...</div>}>
+      <CampaignBoardPage />
+    </Suspense>
+  );
 }

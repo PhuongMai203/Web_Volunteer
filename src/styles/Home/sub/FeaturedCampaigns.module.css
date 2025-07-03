@@ -21,6 +21,40 @@
   cursor: grab;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  padding: 0 1rem;
+}
+
+.scrollContainer:active {
+  cursor: grabbing;
+}
+
+/* Mobile < 640px */
+@media (max-width: 639px) {
+  .scrollContainer {
+    gap: 1rem;
+    padding: 5px;
+    max-width: 340px;
+  }
+}
+
+/* Tablet 640px - 1023px */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .scrollContainer {
+    gap: 1.2rem;
+    padding: 0 0.75rem;
+  }
+  .joinBtn,
+  .shareBtn,
+  .reportBtn {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+    min-width: 80px;
+  }
+
+  .cardActions {
+    gap: 0.3rem;
+    justify-content: center;
+  }
 }
 
 .scrollContainer:active {
@@ -57,11 +91,12 @@
 .cardTitle {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ea580c;
+  color: rgb(192, 51, 4);
+  padding-top: 5px;
 }
 
 .cardDescription {
-  color: #374151; 
+  color: #2c2a2a; 
   margin-top: 0.5rem;
 }
 
@@ -117,12 +152,14 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #222020;
 }
 
 .metaItem {
   display: flex;
   align-items: center;
   gap: 6px;
+  color: black;
 }
 
 .metaIcon {

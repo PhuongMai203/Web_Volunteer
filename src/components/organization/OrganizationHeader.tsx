@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { signOut } from "firebase/auth";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { doc, updateDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 interface HeaderProps {
   userInfo: UserInfo;
@@ -45,11 +46,11 @@ export default function OrganizationHeader({
     try {
       await signOut(auth);
       localStorage.clear();
-      alert("Bạn đã đăng xuất thành công!");
+      toast.success("Bạn đã đăng xuất thành công!");
       window.location.href = "/account";
     } catch (error) {
       console.error("Lỗi khi đăng xuất:", error);
-      alert("Đã xảy ra lỗi khi đăng xuất.");
+      toast.error("Đã xảy ra lỗi khi đăng xuất.");
     }
   };
 

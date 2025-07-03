@@ -1,0 +1,125 @@
+.formSpace {
+  margin-top: 1.5rem; 
+}
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem; 
+  color: #374151; 
+  margin-bottom: 0.25rem; 
+  font-weight: 500; 
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem; 
+  border-radius: 0.75rem; 
+  outline: none;
+  background-color: #fbf5d0;
+  color: #1f2937;
+}
+
+.input:focus {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+  border-color: #f59e0b; 
+  background-color: #f7f7f7;
+}
+.errorText {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+.submitButton {
+  width: 100%;
+  background: linear-gradient(to right, #fbbf24, #f472b6);
+  color: #fff;
+  padding: 0.75rem; 
+  border-radius: 0.75rem;
+  font-weight: 600; 
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-duration: 150ms;
+}
+
+.submitButton:hover {
+  background: linear-gradient(to right, #f59e0b, #ec4899);
+}
+.submitButton:hover {
+  background: linear-gradient(to right, #f59e0b, #ec4899);
+}
+
+.signupText {
+  text-align: center;
+  font-size: 0.875rem; 
+  color: #4b5563;
+  margin-top: 1rem;
+}
+.signupLink {
+  margin-left: 0.25rem;
+  color: #d97706; 
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signupLink:hover {
+  text-decoration: underline;
+}
+/* Responsive cho điện thoại (max-width: 640px) */
+@media (max-width: 640px) {
+  .formSpace {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+
+  .label {
+    font-size: 0.8rem;
+  }
+
+  .input {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    padding: 0.65rem;
+    font-size: 1rem;
+  }
+
+  .signupText {
+    font-size: 0.8rem;
+  }
+
+  .signupLink {
+    font-size: 0.85rem;
+  }
+}
+
+/* Responsive cho iPad hoặc tablet (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .formSpace {
+    margin-top: 1.2rem;
+    padding: 0 2rem;
+  }
+
+  .input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .submitButton {
+    padding: 0.75rem;
+    font-size: 1.05rem;
+  }
+
+  .signupText {
+    font-size: 0.9rem;
+  }
+}

@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../../lib/firebase";
-import styles from "../../styles/auth/SignIn.module.css";
+import styles from "../../styles/auth/LoginForm.module.css";
 import { toast } from "react-toastify";
 
 type LoginFormProps = {
@@ -94,32 +94,43 @@ const handleLogin = async () => {
       address: userData.address || "",
       birthYear: userData.birthYear || "",
       rank: userData.rank || "Đồng",
+      role: userData.role || "", 
     };
 
-    if (userData.role === "user") {
+    if (userData.role === "admin") {
       localStorage.setItem(
-        "userInfo",
-        JSON.stringify({
-          ...commonUserInfo,
-          bookmarkedEvents: userData.bookmarkedEvents || [],
-        })
-      );
+      "accountPageData",
+      JSON.stringify({
+        userInfo: commonUserInfo,
+      })
+    );
 
-      toast.success("Đăng nhập thành công!");
-      router.push("/");
-    } else if (userData.role === "organization") {
-      localStorage.setItem(
-        "accountPageData",
-        JSON.stringify({
-          userInfo: commonUserInfo,
-        })
-      );
+  toast.success("Đăng nhập thành công!");
+  router.push("/admin/dashboard");
+} else if (userData.role === "organization") {
+  localStorage.setItem(
+    "accountPageData",
+    JSON.stringify({
+      userInfo: commonUserInfo,
+    })
+  );
 
-      toast.success("Đăng nhập thành công!");
-      router.push("/organization/dashboard");
-    } else {
-      toast.error("Tài khoản của bạn không được phép truy cập hệ thống.");
-    }
+  toast.success("Đăng nhập thành công!");
+  router.push("/organization/dashboard");
+} else if (userData.role === "user") {
+  localStorage.setItem(
+    "userInfo",
+    JSON.stringify({
+      ...commonUserInfo,
+      bookmarkedEvents: userData.bookmarkedEvents || [],
+    })
+  );
+
+  toast.success("Đăng nhập thành công!");
+  router.push("/");
+} else {
+  toast.error("Tài khoản của bạn không được phép truy cập hệ thống.");
+}
   } catch (error: unknown) {
     console.error(error);
     setError("Đăng nhập thất bại. Vui lòng kiểm tra lại tài khoản hoặc mật khẩu.");

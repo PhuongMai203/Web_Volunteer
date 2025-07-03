@@ -1,11 +1,24 @@
 'use client';
 
 import styles from "@/styles/admin/StatsGrid.module.css";
+import { ReactNode } from "react";
 
-export default function StatsGrid({ statsData }) {
+interface StatItem {
+  id: string;
+  value: number | string;
+  title: string;
+  icon: ReactNode;
+  color: string;
+}
+
+interface StatsGridProps {
+  statsData: StatItem[];
+}
+
+export default function StatsGrid({ statsData }: StatsGridProps) {
   return (
     <div className={styles.gridWrapper}>
-      {statsData.map(stat => (
+      {statsData.map((stat) => (
         <div key={stat.id} className={styles.statCard}>
           <div className={styles.iconWrapper}>
             <div className={`${styles.iconCircle} ${stat.color}`}>

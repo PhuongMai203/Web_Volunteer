@@ -4,6 +4,7 @@
   padding: 20px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
+  max-width: 600px;
   margin: 0 auto;
   animation: fadeIn 0.4s ease;
 }
@@ -22,6 +23,7 @@
   margin: 8px 0;
   font-size: 15px;
   color: #555;
+  flex-wrap: wrap;
 }
 
 .statRow strong {
@@ -36,5 +38,40 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Responsive cho iPad và điện thoại */
+@media (max-width: 1024px) {
+  .card {
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .statRow {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 12px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+
+  .statRow {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px;
+  }
+
+  .statRow strong {
+    margin-top: 4px;
   }
 }

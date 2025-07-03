@@ -7,13 +7,10 @@ import styles from "../../../../styles/Home/sub/HeroSection.module.css";
 import { getSystemSettings } from "@/lib/firebase/systemSettingsService";
 
 export default function HeroSection() {
-  const [hasMounted, setHasMounted] = useState(false);
-  const [hotline, setHotline] = useState("+84 986 556 032"); // Giá trị mặc định
+  const [hotline, setHotline] = useState("+84 986 556 032");
   const router = useRouter();
 
   useEffect(() => {
-    setHasMounted(true);
-
     const fetchSettings = async () => {
       const settings = await getSystemSettings();
       if (settings?.generalInfo?.hotline) {
@@ -23,10 +20,6 @@ export default function HeroSection() {
 
     fetchSettings();
   }, []);
-
-  if (!hasMounted) {
-    return null;
-  }
 
   const handleDonateClick = () => {
     router.push("/campaigns");

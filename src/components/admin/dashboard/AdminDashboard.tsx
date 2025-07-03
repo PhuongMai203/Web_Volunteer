@@ -37,19 +37,19 @@ export default function AdminDashboardPage() {
     fetchStats();
   }, []);
 
-  const displayStats = [
-    { id: 1, title: "Tình Nguyện Viên", value: stats.volunteers, icon: <FaUserFriends />, color: "text-orange-500" },
-    { id: 2, title: "Doanh Nghiệp", value: stats.organizations, icon: <FaBuilding />, color: "text-amber-600" },
-    { id: 3, title: "Chiến Dịch", value: stats.campaigns, icon: <FaFlag />, color: "text-green-500" },
-    { id: 4, title: "Thành Phố", value: stats.cities, icon: <FaMapMarkerAlt />, color: "text-red-500" },
-  ];
+    const displayStats = [
+      { id: "1", title: "Tình Nguyện Viên", value: stats.volunteers, icon: <FaUserFriends />, color: "text-orange-500" },
+      { id: "2", title: "Doanh Nghiệp", value: stats.organizations, icon: <FaBuilding />, color: "text-amber-600" },
+      { id: "3", title: "Chiến Dịch", value: stats.campaigns, icon: <FaFlag />, color: "text-green-500" },
+      { id: "4", title: "Thành Phố", value: stats.cities, icon: <FaMapMarkerAlt />, color: "text-red-500" },
+    ];
 
   return (
     <>
       <div className={styles.pageHeader}>
-            <h2 className={styles.pageTitle}>Bảng Điều Khiển Quản Trị</h2>
-            <p className={styles.pageSubTitle}>Quản lý hệ thống và theo dõi hoạt động</p>
-          </div>
+        <h2 className={styles.pageTitle}>Bảng Điều Khiển Quản Trị</h2>
+        <p className={styles.pageSubTitle}>Quản lý hệ thống và theo dõi hoạt động</p>
+      </div>
       <WelcomeSection adminData={{
         email: "admin1@gmail.com",
         name: "admin1",

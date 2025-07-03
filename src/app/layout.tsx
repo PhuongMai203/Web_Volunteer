@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi">
-      <body className="antialiased bg-orange-50">
+      <body className="antialiased" style={{ backgroundColor: "#fff7f2" }} >
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
         
         {/* Hiển thị toast giữa màn hình, tự đóng sau 3s, màu sắc theo loại */}

@@ -44,14 +44,17 @@ export default function AccountInfoPage() {
       if (docSnap.exists()) {
         const data = docSnap.data() as { [key: string]: unknown };
         setUserInfo({
-          uid,
-          fullName: typeof data.fullName === "string" ? data.fullName : "",
-          name: typeof data.name === "string" ? data.name : "",
-          email: typeof data.email === "string" ? data.email : "",
-          phone: typeof data.phone === "string" ? data.phone : "",
-          address: typeof data.address === "string" ? data.address : "",
-          birthYear: typeof data.birthYear === "string" ? data.birthYear : "",
-        });
+        uid,
+        fullName: typeof data.fullName === "string" ? data.fullName : "",
+        name: typeof data.name === "string" ? data.name : "",
+        email: typeof data.email === "string" ? data.email : "",
+        phone: typeof data.phone === "string" ? data.phone : "",
+        address: typeof data.address === "string" ? data.address : "",
+        birthYear: typeof data.birthYear === "string" ? data.birthYear : "",
+        rank: typeof data.rank === "string" ? data.rank : "",
+        avatarUrl: typeof data.avatarUrl === "string" ? data.avatarUrl : "",
+      });
+
       } else {
         alert("Không tìm thấy thông tin người dùng!");
       }

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { getUserStats } from "@/lib/firebase/getUsers";
 import { getFeaturedStats } from "@/lib/firebase/getFeaturedActivities";
+import styles from "@/styles/Home/FeaturedStats.module.css";
 
 export default function FeaturedStats() {
   const [stats, setStats] = useState({
@@ -48,24 +49,22 @@ export default function FeaturedStats() {
   }
 
   return (
-    <section className="bg-orange-50 py-12 px-6" data-aos="fade-up">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-orange-600 mb-10">
-          📊 Số liệu hoạt động nổi bật
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <section className={styles.section} data-aos="fade-up">
+      <div className={styles.container}>
+        <h2 className={styles.heading}>📊 Số liệu hoạt động nổi bật</h2>
+        <div className={styles.grid}>
           {displayStats.map((item, index) => (
             <div
               key={item.label}
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition duration-300"
+              className={styles.statCard}
               data-aos="zoom-in"
               data-aos-delay={index * 150}
             >
-              <div className="text-4xl mb-2">{item.icon}</div>
-              <p className="text-3xl font-bold text-orange-500">
+              <div className={styles.statIcon}>{item.icon}</div>
+              <p className={styles.statValue}>
                 {item.value.toLocaleString("vi-VN")}
               </p>
-              <p className="text-sm text-gray-700 mt-1">{item.label}</p>
+              <p className={styles.statLabel}>{item.label}</p>
             </div>
           ))}
         </div>

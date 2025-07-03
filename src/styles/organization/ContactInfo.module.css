@@ -1,3 +1,4 @@
+/* CSS mới cho responsive */
 .wrapper {
   display: flex;
   height: 100vh;
@@ -5,6 +6,7 @@
   overflow: hidden;
   border: 2px solid #ffd8a8;
   border-radius: 16px;
+  color: #272220;
 }
 
 .sidebar {
@@ -14,6 +16,8 @@
   flex-direction: column;
   padding: 1rem;
   background: #f1eddf;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
 }
 
 .title {
@@ -34,6 +38,7 @@
   gap: 0.75rem;
   overflow-x: auto; 
   padding-bottom: 10px;
+  scrollbar-width: thin;
 }
 
 .userCard {
@@ -82,22 +87,23 @@
   background: white;
 }
 
-/* Thêm style cho phần chưa chọn người dùng */
-
 .mainContent {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
-  display: flex;
   flex-direction: column;
+  background: #fff4e6;
+  transition: transform 0.3s ease;
+  color: #272220;
 }
+
 .mainContent > p {
   text-align: center;
   margin-top: 2rem;
   color: #6c757d;
 }
+
 .chatBox {
   display: flex;
   flex-direction: column;
@@ -108,6 +114,7 @@
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .chatHeader {
   display: flex;
   align-items: center;
@@ -115,23 +122,26 @@
   padding-bottom: 0.8rem;
   border-bottom: 1px solid #ffc078;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .chatHeader .avatar {
   border-radius: 50%;
 }
+
 .chatName {
   font-size: 1.2rem;
   font-weight: bold;
   color: #272220;
 }
 
-
 .inputArea {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 0;
 }
+
 .input {
   flex: 1;
   padding: 0.6rem 1rem;
@@ -175,6 +185,7 @@
   flex: 1;
   padding: 1rem;
   margin-bottom: 1rem;
+  scrollbar-width: thin;
 }
 
 .myMessage {
@@ -194,6 +205,7 @@
   max-width: 60%;
   word-break: break-word;
 }
+
 .recentSection {
   margin-top: 20px;
   border-top: 1px solid #ddd;
@@ -207,7 +219,6 @@
   color: #333;
 }
 
-/* Container mỗi item chat */
 .recentChatItem {
   display: flex;
   align-items: center;
@@ -221,11 +232,6 @@
   background-color: #f0f2f5;
 }
 
-.selected {
-  background-color: #d6e4ff; /* màu nền khi được chọn */
-}
-
-/* Avatar */
 .recentAvatar {
   border-radius: 70%;
   object-fit: cover;
@@ -235,7 +241,6 @@
   margin-bottom: 0.3rem; 
 }
 
-/* Phần tên + tin nhắn */
 .recentChatText {
   flex: 1;
   overflow: hidden;
@@ -258,4 +263,182 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.noChats {
+  font-size: 0.9rem;
+  color: #6c757d;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    border-radius: 0;
+    border: none;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 35vh;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 0.8rem;
+  }
+  
+  .mainContent {
+    width: 100%;
+    height: calc(100vh - 50px);
+  }
+  
+  .chatBox {
+    min-width: 100%;
+    height: 100%;
+    padding: 0.8rem;
+  }
+  
+  .userList {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    gap: 0.5rem;
+  }
+  
+  .userCard {
+    min-width: 60px;
+    padding: 0.4rem;
+  }
+  
+  .avatar {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .name {
+    font-size: 0.7rem;
+    max-width: 55px;
+  }
+  
+  .messageArea {
+    height: calc(100% - 120px);
+  }
+  
+  .myMessage, .theirMessage {
+    max-width: 80%;
+    font-size: 0.9rem;
+  }
+  
+  .recentChatItem {
+    padding: 6px;
+  }
+  
+  .recentAvatar {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .recentName {
+    font-size: 0.9rem;
+  }
+  
+  .recentLastMessage {
+    font-size: 0.8rem;
+  }
+  
+  .hideOnMobile {
+    display: none;
+  }
+  
+  .backButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  .emptyState {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .emptyIllustration {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 1rem;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #ffa94d;
+  }
+}
+
+/* Responsive cho iPad */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sidebar {
+    width: 250px;
+  }
+  
+  .userList {
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    gap: 0.6rem;
+  }
+  
+  .userCard {
+    min-width: 65px;
+    padding: 0.4rem;
+  }
+  
+  .avatar {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .name {
+    max-width: 60px;
+    font-size: 0.7rem;
+  }
+  
+  .recentChatItem {
+    padding: 7px;
+  }
+  
+  .recentAvatar {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .recentName {
+    font-size: 0.9rem;
+  }
+  
+  .recentLastMessage {
+    font-size: 0.8rem;
+  }
+  
+  .messageArea {
+    height: calc(100% - 120px);
+  }
+  
+  .myMessage, .theirMessage {
+    max-width: 70%;
+  }
+  
+  .backButton {
+    display: none;
+  }
+}
+
+/* Responsive cho desktop */
+@media (min-width: 1025px) {
+  .backButton {
+    display: none;
+  }
 }
