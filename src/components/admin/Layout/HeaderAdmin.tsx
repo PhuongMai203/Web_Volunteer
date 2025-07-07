@@ -77,44 +77,199 @@ export default function HeaderAdmin({ sidebarOpen, setSidebarOpen, adminData }: 
     }
   };
 
-  const handleNotificationClick = async (notif: Notification) => {
-    let content = `
-      <p><b>Nội dung:</b> ${notif.message}</p>
-      <p><b>Thời gian:</b> ${notif.createdAt.toLocaleString()}</p>
-      <hr/>
+const handleNotificationClick = async (notif: Notification) => {
+  // Tạo cấu trúc HTML mới với tone cam pastel
+  let content = `
+    <div class="pastel-notification">
+      <div class="notification-header">
+        <div class="notification-icon">📢</div>
+        <h3>${notif.message}</h3>
+      </div>
+      
+      <div class="notification-body">
+        <div class="info-item">
+          <span class="info-label">Thời gian:</span>
+          <span class="info-value">${notif.createdAt.toLocaleString()}</span>
+        </div>
+  `;
+
+  // Xử lý các loại thông báo khác nhau
+  if (notif.source === "report" && notif.metadata) {
+    content += `
+      <div class="metadata-section">
+        <h4>Thông tin báo cáo</h4>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Người báo cáo:</span>
+            <span class="info-value">${notif.metadata.userId || "Không có"}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Hoạt động:</span>
+            <span class="info-value">${notif.metadata.activityId || "Không có"}</span>
+          </div>
+          <div class="info-item full-width">
+            <span class="info-label">Lý do:</span>
+            <span class="info-value">${notif.metadata.reason || "Không có"}</span>
+          </div>
+        </div>
+      </div>
     `;
-
-    if (notif.source === "report" && notif.metadata) {
+  } else if (notif.source === "support" && notif.metadata) {
+    content += `
+      <div class="metadata-section">
+        <h4>Yêu cầu hỗ trợ</h4>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">Họ tên:</span>
+            <span class="info-value">${notif.metadata.name || "Không có"}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Điện thoại:</span>
+            <span class="info-value">${notif.metadata.phone || "Không có"}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Email:</span>
+            <span class="info-value">${notif.metadata.userEmail || "Không có"}</span>
+          </div>
+          <div class="info-item full-width">
+            <span class="info-label">Địa chỉ:</span>
+            <span class="info-value">${notif.metadata.address || "Không có"}</span>
+          </div>
+          <div class="info-item full-width">
+            <span class="info-label">Mô tả:</span>
+            <span class="info-value">${notif.metadata.description || "Không có"}</span>
+          </div>
+        </div>
+      </div>
+    `;
+  } else if (notif.source === "notification" && notif.metadata) {
+    content += `<div class="metadata-section"><h4>Thông tin bổ sung</h4><div class="info-grid">`;
+    
+    if (notif.metadata.company) {
       content += `
-        <p><b>Người báo cáo (userId):</b> ${notif.metadata.userId || "Không có"}</p>
-        <p><b>Hoạt động (activityId):</b> ${notif.metadata.activityId || "Không có"}</p>
-        <p><b>Lý do:</b> ${notif.metadata.reason || "Không có"}</p>
+        <div class="info-item">
+          <span class="info-label">Doanh nghiệp:</span>
+          <span class="info-value">${notif.metadata.company}</span>
+        </div>
       `;
-    } else if (notif.source === "support" && notif.metadata) {
-      content += `
-        <p><b>Họ tên:</b> ${notif.metadata.name || "Không có"}</p>
-        <p><b>Số điện thoại:</b> ${notif.metadata.phone || "Không có"}</p>
-        <p><b>Email:</b> ${notif.metadata.userEmail || "Không có"}</p>
-        <p><b>Địa chỉ:</b> ${notif.metadata.address || "Không có"}</p>
-        <p><b>Mô tả:</b> ${notif.metadata.description || "Không có"}</p>
-      `;
-    } else if (notif.source === "notification" && notif.metadata) {
-      if (notif.metadata.company) {
-        content += `<p><b>Doanh nghiệp:</b> ${notif.metadata.company}</p>`;
-      }
-      if (notif.metadata.userEmail) {
-        content += `<p><b>Email người dùng:</b> ${notif.metadata.userEmail}</p>`;
-      }
-      if (notif.metadata.type) {
-        content += `<p><b>Loại:</b> ${notif.metadata.type}</p>`;
-      }
     }
+    if (notif.metadata.userEmail) {
+      content += `
+        <div class="info-item">
+          <span class="info-label">Email:</span>
+          <span class="info-value">${notif.metadata.userEmail}</span>
+        </div>
+      `;
+    }
+    if (notif.metadata.type) {
+      content += `
+        <div class="info-item">
+          <span class="info-label">Loại:</span>
+          <span class="info-value">${notif.metadata.type}</span>
+        </div>
+      `;
+    }
+    
+    content += `</div></div>`;
+  }
 
-    Swal.fire({
-      title: "Chi tiết thông báo",
-      html: content,
-      confirmButtonText: "Đóng",
-    });
+  content += `</div></div>`; 
+
+  // Thêm CSS trực tiếp cho giao diện
+  const customCSS = `
+    <style>
+      .pastel-notification {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #5a3e36;
+        max-width: 500px;
+      }
+      
+      .notification-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #ffd8b8;
+        margin-bottom: 16px;
+      }
+      
+      .notification-icon {
+        background: #ffe8d6;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+      
+      .notification-header h3 {
+        margin: 0;
+        color: #e67e22;
+        font-size: 1.2em;
+      }
+      
+      .metadata-section {
+        background: #fff5eb;
+        border-radius: 10px;
+        padding: 15px;
+        margin-top: 20px;
+        border-left: 3px solid #ffb677;
+      }
+      
+      .metadata-section h4 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        color: #d35400;
+        font-size: 1.1em;
+      }
+      
+      .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      
+      .info-item {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .info-item.full-width {
+        grid-column: span 2;
+      }
+      
+      .info-label {
+        font-weight: 600;
+        color: #e67e22;
+        font-size: 0.85em;
+        margin-bottom: 4px;
+      }
+      
+      .info-value {
+        background: #ffeed9;
+        padding: 8px 12px;
+        border-radius: 6px;
+        font-size: 0.95em;
+      }
+    </style>
+  `;
+
+  Swal.fire({
+    title: "Chi tiết thông báo",
+    html: customCSS + content,
+    confirmButtonText: "Đóng",
+    background: '#fffaf5',
+    confirmButtonColor: '#ffb677',
+    padding: '20px',
+    customClass: {
+      popup: 'pastel-notification-popup',
+      title: 'pastel-notification-title',
+      htmlContainer: 'pastel-notification-content'
+    },
+    width: '600px'
+  });
 
     // Cập nhật trạng thái isRead = true
     try {

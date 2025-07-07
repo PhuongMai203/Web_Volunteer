@@ -116,7 +116,7 @@ const StatisticsPage = () => {
           <p>Đang tải dữ liệu...</p>
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            <StatCard title="Tổng tình nguyện viên" value={totalUsers.toString()} />
+            <StatCard title="Tổng người dùng" value={totalUsers.toString()} />
             <StatCard title="Chiến dịch đang hoạt động" value={activeCampaigns.toString()} />
             <StatCard title="Tổng giờ tình nguyện" value={totalVolunteerHours.toLocaleString()} />
           </div>
