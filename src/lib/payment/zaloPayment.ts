@@ -9,7 +9,7 @@ export const handleZaloPayPayment = async (
 ) => {
   try {
     const appTransId = generateAppTransId();
-
+    const callback_url = process.env.NEXT_PUBLIC_CALLBACK_URL;
     const res = await fetch("https://bfa8-2402-800-629f-adda-bd61-d642-91c2-8ceb.ngrok-free.app/payment", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -17,7 +17,7 @@ export const handleZaloPayPayment = async (
         app_trans_id: appTransId,
         app_user: user.uid,
         amount,
-        callback_url: "http://localhost:3000/",
+        callback_url: callback_url,
         description: `Ủng hộ chiến dịch ${campaignTitle}`,
         campaign_id: campaignId,
         bank_code: "",

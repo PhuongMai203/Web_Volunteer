@@ -28,9 +28,10 @@
 
 .peopleRow {
   display: flex;
-  gap: 20px;
+  gap: 50px;
   min-width: max-content;
   padding: 0 4px;
+
 }
 
 .personCard {
@@ -110,10 +111,6 @@
   .scrollContainer {
     padding-bottom: 4px;
     
-  }
-
-  .peopleRow {
-    gap: 12px;
   }
 
   .personCard {

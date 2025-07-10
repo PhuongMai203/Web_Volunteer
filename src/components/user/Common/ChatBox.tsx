@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X } from "lucide-react";
+import {  X } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import styles from "../../../styles/Common/ChatBox.module.css";
 import { getTotalDonationByUser, getTotalDonationByUserForCampaign } from "../../../lib/firebase/getUserPayments";
@@ -273,15 +274,21 @@ export default function ChatBox() {
       )}
 
       {!isOpen && (
-        <motion.button
-          onClick={() => setIsOpen(true)}
-          className={styles.chatToggleBtn}
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <MessageCircle size={30} />
-        </motion.button>
-      )}
+  <motion.button
+    onClick={() => setIsOpen(true)}
+    className={styles.chatToggleBtn}
+    animate={{ rotate: [0, -10, 10, -10, 10, 0] }}
+    transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+  >
+    <Image
+      src="/images/robot.png"
+      alt="Chat bot"
+      width={50}
+      height={50}
+    />
+  </motion.button>
+)}
+
     </div>
   );
 }

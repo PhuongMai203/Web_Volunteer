@@ -9,7 +9,7 @@ import { db } from "@/lib/firebase";
 import styles from "../../../styles/Contact/ContactPage.module.css";
 import Image from "next/image";
 
-const socket = io("http://localhost:3000");
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL as string);
 
 interface Message {
   id: string;

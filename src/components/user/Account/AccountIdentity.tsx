@@ -40,7 +40,7 @@ export default function AccountIdentity({
     formData.append("selfie", portrait);
 
     try {
-      const res = await fetch("http://localhost:3000/verify-face", {
+const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/verify-face`, {
         method: "POST",
         body: formData,
       });

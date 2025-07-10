@@ -26,7 +26,7 @@ interface ContactInfoProps {
   preSelectedUserId?: string | null;
 }
 
-const socket = io("http://localhost:3000");
+const socket = io(process.env.NEXT_PUBLIC_SOCKET_URL as string);
 
 export default function ContactInfo({ preSelectedUserId }: ContactInfoProps) {
   const [users, setUsers] = useState<User[]>([]);

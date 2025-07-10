@@ -6,10 +6,10 @@
 }
 
 .chatToggleBtn {
-  background-color: #f97316; /* orange-500 */
+  background-color: #ffc194; /* orange-500 */
   color: white;
   border: none;
-  padding: 12px;
+  padding: 6px;
   border-radius: 9999px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
@@ -17,7 +17,7 @@
 }
 
 .chatToggleBtn:hover {
-  background-color: #ea580c; /* orange-600 */
+  background-color: rgb(251, 154, 102); /* orange-600 */
 }
 
 .chatBox {

@@ -82,11 +82,11 @@ useEffect(() => {
                 <Image
                   src={src}
                   alt={`Đối tác ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 200px"
-                  style={{ objectFit: "cover" }}
+                  width={100}
+                  height={90}
+                  className="object-cover rounded-md shadow"
                 />
+
               </div>
             ))}
           </div>

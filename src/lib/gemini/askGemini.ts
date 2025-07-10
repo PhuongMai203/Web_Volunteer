@@ -1,5 +1,6 @@
 export async function askGemini(userMessage: string): Promise<string> {
-  const GEMINI_API_KEY = "AIzaSyACSvGxL9Qh0RfIMR3Srq4xKMlnG95Jya8";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002:generateContent?key=${GEMINI_API_KEY}`;
 
   const prompt = `
