@@ -1,11 +1,10 @@
 module.exports = {
-  accessKey: 'F8BBA842ECF85',
-  secretKey: 'K951B6PE1waDMi640xX08PD3vg6EkVlz',
-  orderInfo: 'pay with MoMo',
-  partnerCode: 'MOMO',
-  redirectUrl: 'http://localhost:5000/views/home.html',
-  ipnUrl: 'https://0778-14-178-58-205.ngrok-free.app/callback', //chú ý: cần dùng ngrok thì momo mới post đến url này được
-  requestType: 'payWithMethod',
+  accessKey: 'PFRaN0GipRfistl6',
+  secretKey: 'pzzpB7cM4NlCt1dIOTJO7ir3QnpJOHyx',
+  partnerCode: 'MOMOXWEF20250513_TEST',
+  redirectUrl: 'helpconnectmomo://callback',
+  ipnUrl: 'https://228472135160.ngrok-free.app',
+  requestType: 'captureWallet',
   extraData: '',
   orderGroupId: '',
   autoCapture: true,

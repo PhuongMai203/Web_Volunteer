@@ -5,19 +5,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const moment = require('moment');
 const qs = require('qs');
-const admin = require('firebase-admin');
-const serviceAccount = require('./serviceAccountKey.json');
-const cors = require('cors');
 
 const app = express();
-
-app.use(cors({
-  origin: 'http://localhost:3000',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-}));
-app.options('*', cors());
 
 // APP INFO ZALOPAY SANDBOX
 const config = {
@@ -27,56 +16,45 @@ const config = {
   endpoint: 'https://sb-openapi.zalopay.vn/v2/create',
 };
 
-// Khởi tạo Firebase Admin
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
-const firestore = admin.firestore();
-
 app.use(bodyParser.json());
 
 // MIDDLEWARE VALIDATE APP_TRANS_ID
 const validateAppTransId = (app_trans_id) => {
-  const pattern = /^\d{6}_\d+$/;
+  const pattern = /^(\d{2})(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])_\d+$/;
   if (!pattern.test(app_trans_id)) return false;
-
+  
   const clientDate = moment(app_trans_id.substring(0, 6), 'YYMMDD');
   const maxDate = moment().add(1, 'day');
   const minDate = moment().subtract(2, 'months');
-
+  
   return clientDate.isBetween(minDate, maxDate, null, '[]');
 };
 
+/**
+ * POST /payment - Tạo đơn hàng
+ */
 app.post('/payment', async (req, res) => {
-  const {
-    app_trans_id,
-    app_user,
-    amount,
-    callback_url,
-    description,
-    bank_code,
-    campaign_id,
-    campaign_title,
-    campaign_creator_id,
-    user_name,
-  } = req.body;
+  const { app_trans_id, app_user, amount, callback_url, description, bank_code } = req.body;
 
-  if (!app_user || !amount || !callback_url || !description || !campaign_id || !campaign_title || !campaign_creator_id || !user_name) {
+  // Validate input
+  if (!app_trans_id || !validateAppTransId(app_trans_id)) {
+    return res.status(400).json({
+      return_code: 2,
+      sub_return_code: -402,
+      return_message: 'app_trans_id không hợp lệ'
+    });
+  }
+
+  if (!app_user || !amount || !callback_url || !description) {
     return res.status(400).json({
       return_code: 2,
       sub_return_code: -401,
-      return_message: 'Thiếu tham số bắt buộc',
+      return_message: 'Thiếu tham số bắt buộc'
     });
   }
 
   try {
-    const embedDataObj = {
-      redirecturl: callback_url,
-      campaign_id,
-      user_id: app_user,
-    };
-    const embed_data = JSON.stringify(embedDataObj);
-
+    // Tạo order object
     const order = {
       app_id: config.app_id,
       app_trans_id,
@@ -84,12 +62,13 @@ app.post('/payment', async (req, res) => {
       app_time: Date.now(),
       amount,
       item: '[]',
-      embed_data,
+      embed_data: JSON.stringify({ redirecturl: callback_url }),
       description,
       callback_url,
       bank_code: bank_code || '',
     };
 
+    // Tính MAC
     const rawData = [
       order.app_id,
       order.app_trans_id,
@@ -97,38 +76,20 @@ app.post('/payment', async (req, res) => {
       order.amount,
       order.app_time,
       order.embed_data,
-      order.item,
+      order.item
     ].join('|');
     order.mac = CryptoJS.HmacSHA256(rawData, config.key1).toString();
 
+    // Gọi ZaloPay API
     const response = await axios.post(config.endpoint, qs.stringify(order), {
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    });
-
-    await firestore.collection('payments').add({
-      campaignId: campaign_id,
-      userId: app_user,
-      userName: user_name,
-      amount,
-      paymentMethod: 'ZaloPay',
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
-      orderId: app_trans_id,
-      campaignCreatorId: campaign_creator_id,
-      campaignTitle: campaign_title,
-      zpTransId: response.data.zp_trans_id || '',
-    });
-
-    // ✅ Cộng thêm số tiền vào totalDonationAmount của chiến dịch
-    const campaignRef = firestore.collection('featured_activities').doc(campaign_id);
-    await campaignRef.update({
-      totalDonationAmount: admin.firestore.FieldValue.increment(amount),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     });
 
     res.json({
       return_code: 1,
       return_message: 'OK',
       order_url: response.data.order_url,
-      zp_trans_id: response.data.zp_trans_id,
+      zp_trans_id: response.data.zp_trans_id
     });
 
   } catch (error) {
@@ -136,9 +97,11 @@ app.post('/payment', async (req, res) => {
     res.status(500).json({
       return_code: 2,
       sub_return_code: -500,
-      return_message: error.response?.data?.return_message || 'Lỗi hệ thống',
+      return_message: error.response?.data?.return_message || 'Lỗi hệ thống'
     });
   }
+  console.log("Tạo đơn hàng với app_trans_id:", app_trans_id);
+
 });
 
 /**
@@ -151,17 +114,22 @@ app.post('/check-status-order', async (req, res) => {
     return res.status(400).json({
       return_code: 2,
       sub_return_code: -402,
-      return_message: 'app_trans_id không hợp lệ',
+      return_message: 'app_trans_id không hợp lệ'
     });
   }
 
   try {
     const postData = {
       app_id: config.app_id,
-      app_trans_id,
+      app_trans_id
     };
 
-    const rawQuery = [postData.app_id, postData.app_trans_id, config.key1].join('|');
+    // Tính MAC cho truy vấn
+    const rawQuery = [
+      postData.app_id,
+      postData.app_trans_id,
+      config.key1
+    ].join('|');
     postData.mac = CryptoJS.HmacSHA256(rawQuery, config.key1).toString();
 
     const response = await axios.post(
@@ -177,14 +145,15 @@ app.post('/check-status-order', async (req, res) => {
     res.status(500).json({
       return_code: 2,
       sub_return_code: -500,
-      return_message: 'Lỗi truy vấn trạng thái',
+      return_message: 'Lỗi truy vấn trạng thái'
     });
   }
+  console.log("Kiểm tra đơn hàng với app_trans_id:", app_trans_id);
 
-  console.log('🟡 Kiểm tra đơn hàng với app_trans_id:', app_trans_id);
 });
 
 // Khởi động server
-app.listen(5001, () => {
-  console.log('🚀 ZaloPay Payment Gateway running on port 5001');
+app.listen(5000, () => {
+  console.log('ZaloPay Payment Gateway running on port 5000');
+  console.log('Test with app_trans_id format: YYMMDD_xxxxxx');
 });
